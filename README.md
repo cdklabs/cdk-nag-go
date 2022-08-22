@@ -1,15 +1,10 @@
-## My Project
+## Go Bindings for cdk-nag
 
-TODO: Fill this README out!
-
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
+This repository contains Go bindings for [cdk-nag](https://github.com/cdklabs/cdk-nag).
 
 ## Security
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+See [Security Issue Notifications](CONTRIBUTING.md#security-issue-notifications) for more information.
 
 ## License
 
