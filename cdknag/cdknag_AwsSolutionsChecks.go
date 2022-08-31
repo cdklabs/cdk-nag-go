@@ -122,6 +122,9 @@ func (j *jsiiProxy_AwsSolutionsChecks) Verbose() *bool {
 func NewAwsSolutionsChecks(props *NagPackProps) AwsSolutionsChecks {
 	_init_.Initialize()
 
+	if err := validateNewAwsSolutionsChecksParameters(props); err != nil {
+		panic(err)
+	}
 	j := jsiiProxy_AwsSolutionsChecks{}
 
 	_jsii_.Create(
@@ -143,7 +146,10 @@ func NewAwsSolutionsChecks_Override(a AwsSolutionsChecks, props *NagPackProps) {
 	)
 }
 
-func (j *jsiiProxy_AwsSolutionsChecks) SetLogIgnores(val *bool) {
+func (j *jsiiProxy_AwsSolutionsChecks)SetLogIgnores(val *bool) {
+	if err := j.validateSetLogIgnoresParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"logIgnores",
@@ -151,7 +157,10 @@ func (j *jsiiProxy_AwsSolutionsChecks) SetLogIgnores(val *bool) {
 	)
 }
 
-func (j *jsiiProxy_AwsSolutionsChecks) SetPackName(val *string) {
+func (j *jsiiProxy_AwsSolutionsChecks)SetPackName(val *string) {
+	if err := j.validateSetPackNameParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"packName",
@@ -159,7 +168,10 @@ func (j *jsiiProxy_AwsSolutionsChecks) SetPackName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AwsSolutionsChecks) SetReports(val *bool) {
+func (j *jsiiProxy_AwsSolutionsChecks)SetReports(val *bool) {
+	if err := j.validateSetReportsParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"reports",
@@ -167,7 +179,10 @@ func (j *jsiiProxy_AwsSolutionsChecks) SetReports(val *bool) {
 	)
 }
 
-func (j *jsiiProxy_AwsSolutionsChecks) SetReportStacks(val *[]*string) {
+func (j *jsiiProxy_AwsSolutionsChecks)SetReportStacks(val *[]*string) {
+	if err := j.validateSetReportStacksParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"reportStacks",
@@ -175,7 +190,10 @@ func (j *jsiiProxy_AwsSolutionsChecks) SetReportStacks(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_AwsSolutionsChecks) SetVerbose(val *bool) {
+func (j *jsiiProxy_AwsSolutionsChecks)SetVerbose(val *bool) {
+	if err := j.validateSetVerboseParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"verbose",
@@ -184,6 +202,9 @@ func (j *jsiiProxy_AwsSolutionsChecks) SetVerbose(val *bool) {
 }
 
 func (a *jsiiProxy_AwsSolutionsChecks) ApplyRule(params IApplyRule) {
+	if err := a.validateApplyRuleParameters(params); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		a,
 		"applyRule",
@@ -192,6 +213,9 @@ func (a *jsiiProxy_AwsSolutionsChecks) ApplyRule(params IApplyRule) {
 }
 
 func (a *jsiiProxy_AwsSolutionsChecks) CreateComplianceReportLine(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) *string {
+	if err := a.validateCreateComplianceReportLineParameters(params, ruleId, compliance); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -205,6 +229,9 @@ func (a *jsiiProxy_AwsSolutionsChecks) CreateComplianceReportLine(params IApplyR
 }
 
 func (a *jsiiProxy_AwsSolutionsChecks) CreateMessage(ruleId *string, findingId *string, info *string, explanation *string) *string {
+	if err := a.validateCreateMessageParameters(ruleId, findingId, info, explanation); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -218,6 +245,9 @@ func (a *jsiiProxy_AwsSolutionsChecks) CreateMessage(ruleId *string, findingId *
 }
 
 func (a *jsiiProxy_AwsSolutionsChecks) IgnoreRule(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) *string {
+	if err := a.validateIgnoreRuleParameters(ignores, ruleId, findingId); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -231,6 +261,9 @@ func (a *jsiiProxy_AwsSolutionsChecks) IgnoreRule(ignores *[]*NagPackSuppression
 }
 
 func (a *jsiiProxy_AwsSolutionsChecks) InitializeStackReport(params IApplyRule) {
+	if err := a.validateInitializeStackReportParameters(params); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		a,
 		"initializeStackReport",
@@ -239,6 +272,9 @@ func (a *jsiiProxy_AwsSolutionsChecks) InitializeStackReport(params IApplyRule) 
 }
 
 func (a *jsiiProxy_AwsSolutionsChecks) Visit(node constructs.IConstruct) {
+	if err := a.validateVisitParameters(node); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		a,
 		"visit",
@@ -247,6 +283,9 @@ func (a *jsiiProxy_AwsSolutionsChecks) Visit(node constructs.IConstruct) {
 }
 
 func (a *jsiiProxy_AwsSolutionsChecks) WriteToStackComplianceReport(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) {
+	if err := a.validateWriteToStackComplianceReportParameters(params, ruleId, compliance); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		a,
 		"writeToStackComplianceReport",

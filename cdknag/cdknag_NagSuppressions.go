@@ -46,6 +46,9 @@ func NewNagSuppressions_Override(n NagSuppressions) {
 func NagSuppressions_AddResourceSuppressions(construct constructs.IConstruct, suppressions *[]*NagPackSuppression, applyToChildren *bool) {
 	_init_.Initialize()
 
+	if err := validateNagSuppressions_AddResourceSuppressionsParameters(construct, suppressions); err != nil {
+		panic(err)
+	}
 	_jsii_.StaticInvokeVoid(
 		"cdk-nag.NagSuppressions",
 		"addResourceSuppressions",
@@ -57,6 +60,9 @@ func NagSuppressions_AddResourceSuppressions(construct constructs.IConstruct, su
 func NagSuppressions_AddResourceSuppressionsByPath(stack awscdk.Stack, path *string, suppressions *[]*NagPackSuppression, applyToChildren *bool) {
 	_init_.Initialize()
 
+	if err := validateNagSuppressions_AddResourceSuppressionsByPathParameters(stack, path, suppressions); err != nil {
+		panic(err)
+	}
 	_jsii_.StaticInvokeVoid(
 		"cdk-nag.NagSuppressions",
 		"addResourceSuppressionsByPath",
@@ -68,6 +74,9 @@ func NagSuppressions_AddResourceSuppressionsByPath(stack awscdk.Stack, path *str
 func NagSuppressions_AddStackSuppressions(stack awscdk.Stack, suppressions *[]*NagPackSuppression, applyToNestedStacks *bool) {
 	_init_.Initialize()
 
+	if err := validateNagSuppressions_AddStackSuppressionsParameters(stack, suppressions); err != nil {
+		panic(err)
+	}
 	_jsii_.StaticInvokeVoid(
 		"cdk-nag.NagSuppressions",
 		"addStackSuppressions",

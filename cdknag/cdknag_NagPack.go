@@ -131,7 +131,10 @@ func NewNagPack_Override(n NagPack, props *NagPackProps) {
 	)
 }
 
-func (j *jsiiProxy_NagPack) SetLogIgnores(val *bool) {
+func (j *jsiiProxy_NagPack)SetLogIgnores(val *bool) {
+	if err := j.validateSetLogIgnoresParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"logIgnores",
@@ -139,7 +142,10 @@ func (j *jsiiProxy_NagPack) SetLogIgnores(val *bool) {
 	)
 }
 
-func (j *jsiiProxy_NagPack) SetPackName(val *string) {
+func (j *jsiiProxy_NagPack)SetPackName(val *string) {
+	if err := j.validateSetPackNameParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"packName",
@@ -147,7 +153,10 @@ func (j *jsiiProxy_NagPack) SetPackName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NagPack) SetReports(val *bool) {
+func (j *jsiiProxy_NagPack)SetReports(val *bool) {
+	if err := j.validateSetReportsParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"reports",
@@ -155,7 +164,10 @@ func (j *jsiiProxy_NagPack) SetReports(val *bool) {
 	)
 }
 
-func (j *jsiiProxy_NagPack) SetReportStacks(val *[]*string) {
+func (j *jsiiProxy_NagPack)SetReportStacks(val *[]*string) {
+	if err := j.validateSetReportStacksParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"reportStacks",
@@ -163,7 +175,10 @@ func (j *jsiiProxy_NagPack) SetReportStacks(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_NagPack) SetVerbose(val *bool) {
+func (j *jsiiProxy_NagPack)SetVerbose(val *bool) {
+	if err := j.validateSetVerboseParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"verbose",
@@ -172,6 +187,9 @@ func (j *jsiiProxy_NagPack) SetVerbose(val *bool) {
 }
 
 func (n *jsiiProxy_NagPack) ApplyRule(params IApplyRule) {
+	if err := n.validateApplyRuleParameters(params); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"applyRule",
@@ -180,6 +198,9 @@ func (n *jsiiProxy_NagPack) ApplyRule(params IApplyRule) {
 }
 
 func (n *jsiiProxy_NagPack) CreateComplianceReportLine(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) *string {
+	if err := n.validateCreateComplianceReportLineParameters(params, ruleId, compliance); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -193,6 +214,9 @@ func (n *jsiiProxy_NagPack) CreateComplianceReportLine(params IApplyRule, ruleId
 }
 
 func (n *jsiiProxy_NagPack) CreateMessage(ruleId *string, findingId *string, info *string, explanation *string) *string {
+	if err := n.validateCreateMessageParameters(ruleId, findingId, info, explanation); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -206,6 +230,9 @@ func (n *jsiiProxy_NagPack) CreateMessage(ruleId *string, findingId *string, inf
 }
 
 func (n *jsiiProxy_NagPack) IgnoreRule(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) *string {
+	if err := n.validateIgnoreRuleParameters(ignores, ruleId, findingId); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -219,6 +246,9 @@ func (n *jsiiProxy_NagPack) IgnoreRule(ignores *[]*NagPackSuppression, ruleId *s
 }
 
 func (n *jsiiProxy_NagPack) InitializeStackReport(params IApplyRule) {
+	if err := n.validateInitializeStackReportParameters(params); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"initializeStackReport",
@@ -227,6 +257,9 @@ func (n *jsiiProxy_NagPack) InitializeStackReport(params IApplyRule) {
 }
 
 func (n *jsiiProxy_NagPack) Visit(node constructs.IConstruct) {
+	if err := n.validateVisitParameters(node); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"visit",
@@ -235,6 +268,9 @@ func (n *jsiiProxy_NagPack) Visit(node constructs.IConstruct) {
 }
 
 func (n *jsiiProxy_NagPack) WriteToStackComplianceReport(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) {
+	if err := n.validateWriteToStackComplianceReportParameters(params, ruleId, compliance); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"writeToStackComplianceReport",

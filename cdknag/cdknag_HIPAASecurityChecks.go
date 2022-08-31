@@ -124,6 +124,9 @@ func (j *jsiiProxy_HIPAASecurityChecks) Verbose() *bool {
 func NewHIPAASecurityChecks(props *NagPackProps) HIPAASecurityChecks {
 	_init_.Initialize()
 
+	if err := validateNewHIPAASecurityChecksParameters(props); err != nil {
+		panic(err)
+	}
 	j := jsiiProxy_HIPAASecurityChecks{}
 
 	_jsii_.Create(
@@ -145,7 +148,10 @@ func NewHIPAASecurityChecks_Override(h HIPAASecurityChecks, props *NagPackProps)
 	)
 }
 
-func (j *jsiiProxy_HIPAASecurityChecks) SetLogIgnores(val *bool) {
+func (j *jsiiProxy_HIPAASecurityChecks)SetLogIgnores(val *bool) {
+	if err := j.validateSetLogIgnoresParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"logIgnores",
@@ -153,7 +159,10 @@ func (j *jsiiProxy_HIPAASecurityChecks) SetLogIgnores(val *bool) {
 	)
 }
 
-func (j *jsiiProxy_HIPAASecurityChecks) SetPackName(val *string) {
+func (j *jsiiProxy_HIPAASecurityChecks)SetPackName(val *string) {
+	if err := j.validateSetPackNameParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"packName",
@@ -161,7 +170,10 @@ func (j *jsiiProxy_HIPAASecurityChecks) SetPackName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_HIPAASecurityChecks) SetReports(val *bool) {
+func (j *jsiiProxy_HIPAASecurityChecks)SetReports(val *bool) {
+	if err := j.validateSetReportsParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"reports",
@@ -169,7 +181,10 @@ func (j *jsiiProxy_HIPAASecurityChecks) SetReports(val *bool) {
 	)
 }
 
-func (j *jsiiProxy_HIPAASecurityChecks) SetReportStacks(val *[]*string) {
+func (j *jsiiProxy_HIPAASecurityChecks)SetReportStacks(val *[]*string) {
+	if err := j.validateSetReportStacksParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"reportStacks",
@@ -177,7 +192,10 @@ func (j *jsiiProxy_HIPAASecurityChecks) SetReportStacks(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_HIPAASecurityChecks) SetVerbose(val *bool) {
+func (j *jsiiProxy_HIPAASecurityChecks)SetVerbose(val *bool) {
+	if err := j.validateSetVerboseParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"verbose",
@@ -186,6 +204,9 @@ func (j *jsiiProxy_HIPAASecurityChecks) SetVerbose(val *bool) {
 }
 
 func (h *jsiiProxy_HIPAASecurityChecks) ApplyRule(params IApplyRule) {
+	if err := h.validateApplyRuleParameters(params); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		h,
 		"applyRule",
@@ -194,6 +215,9 @@ func (h *jsiiProxy_HIPAASecurityChecks) ApplyRule(params IApplyRule) {
 }
 
 func (h *jsiiProxy_HIPAASecurityChecks) CreateComplianceReportLine(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) *string {
+	if err := h.validateCreateComplianceReportLineParameters(params, ruleId, compliance); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -207,6 +231,9 @@ func (h *jsiiProxy_HIPAASecurityChecks) CreateComplianceReportLine(params IApply
 }
 
 func (h *jsiiProxy_HIPAASecurityChecks) CreateMessage(ruleId *string, findingId *string, info *string, explanation *string) *string {
+	if err := h.validateCreateMessageParameters(ruleId, findingId, info, explanation); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -220,6 +247,9 @@ func (h *jsiiProxy_HIPAASecurityChecks) CreateMessage(ruleId *string, findingId 
 }
 
 func (h *jsiiProxy_HIPAASecurityChecks) IgnoreRule(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) *string {
+	if err := h.validateIgnoreRuleParameters(ignores, ruleId, findingId); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -233,6 +263,9 @@ func (h *jsiiProxy_HIPAASecurityChecks) IgnoreRule(ignores *[]*NagPackSuppressio
 }
 
 func (h *jsiiProxy_HIPAASecurityChecks) InitializeStackReport(params IApplyRule) {
+	if err := h.validateInitializeStackReportParameters(params); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		h,
 		"initializeStackReport",
@@ -241,6 +274,9 @@ func (h *jsiiProxy_HIPAASecurityChecks) InitializeStackReport(params IApplyRule)
 }
 
 func (h *jsiiProxy_HIPAASecurityChecks) Visit(node constructs.IConstruct) {
+	if err := h.validateVisitParameters(node); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		h,
 		"visit",
@@ -249,6 +285,9 @@ func (h *jsiiProxy_HIPAASecurityChecks) Visit(node constructs.IConstruct) {
 }
 
 func (h *jsiiProxy_HIPAASecurityChecks) WriteToStackComplianceReport(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) {
+	if err := h.validateWriteToStackComplianceReportParameters(params, ruleId, compliance); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		h,
 		"writeToStackComplianceReport",

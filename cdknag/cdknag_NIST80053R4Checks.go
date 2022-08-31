@@ -124,6 +124,9 @@ func (j *jsiiProxy_NIST80053R4Checks) Verbose() *bool {
 func NewNIST80053R4Checks(props *NagPackProps) NIST80053R4Checks {
 	_init_.Initialize()
 
+	if err := validateNewNIST80053R4ChecksParameters(props); err != nil {
+		panic(err)
+	}
 	j := jsiiProxy_NIST80053R4Checks{}
 
 	_jsii_.Create(
@@ -145,7 +148,10 @@ func NewNIST80053R4Checks_Override(n NIST80053R4Checks, props *NagPackProps) {
 	)
 }
 
-func (j *jsiiProxy_NIST80053R4Checks) SetLogIgnores(val *bool) {
+func (j *jsiiProxy_NIST80053R4Checks)SetLogIgnores(val *bool) {
+	if err := j.validateSetLogIgnoresParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"logIgnores",
@@ -153,7 +159,10 @@ func (j *jsiiProxy_NIST80053R4Checks) SetLogIgnores(val *bool) {
 	)
 }
 
-func (j *jsiiProxy_NIST80053R4Checks) SetPackName(val *string) {
+func (j *jsiiProxy_NIST80053R4Checks)SetPackName(val *string) {
+	if err := j.validateSetPackNameParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"packName",
@@ -161,7 +170,10 @@ func (j *jsiiProxy_NIST80053R4Checks) SetPackName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NIST80053R4Checks) SetReports(val *bool) {
+func (j *jsiiProxy_NIST80053R4Checks)SetReports(val *bool) {
+	if err := j.validateSetReportsParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"reports",
@@ -169,7 +181,10 @@ func (j *jsiiProxy_NIST80053R4Checks) SetReports(val *bool) {
 	)
 }
 
-func (j *jsiiProxy_NIST80053R4Checks) SetReportStacks(val *[]*string) {
+func (j *jsiiProxy_NIST80053R4Checks)SetReportStacks(val *[]*string) {
+	if err := j.validateSetReportStacksParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"reportStacks",
@@ -177,7 +192,10 @@ func (j *jsiiProxy_NIST80053R4Checks) SetReportStacks(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_NIST80053R4Checks) SetVerbose(val *bool) {
+func (j *jsiiProxy_NIST80053R4Checks)SetVerbose(val *bool) {
+	if err := j.validateSetVerboseParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"verbose",
@@ -186,6 +204,9 @@ func (j *jsiiProxy_NIST80053R4Checks) SetVerbose(val *bool) {
 }
 
 func (n *jsiiProxy_NIST80053R4Checks) ApplyRule(params IApplyRule) {
+	if err := n.validateApplyRuleParameters(params); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"applyRule",
@@ -194,6 +215,9 @@ func (n *jsiiProxy_NIST80053R4Checks) ApplyRule(params IApplyRule) {
 }
 
 func (n *jsiiProxy_NIST80053R4Checks) CreateComplianceReportLine(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) *string {
+	if err := n.validateCreateComplianceReportLineParameters(params, ruleId, compliance); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -207,6 +231,9 @@ func (n *jsiiProxy_NIST80053R4Checks) CreateComplianceReportLine(params IApplyRu
 }
 
 func (n *jsiiProxy_NIST80053R4Checks) CreateMessage(ruleId *string, findingId *string, info *string, explanation *string) *string {
+	if err := n.validateCreateMessageParameters(ruleId, findingId, info, explanation); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -220,6 +247,9 @@ func (n *jsiiProxy_NIST80053R4Checks) CreateMessage(ruleId *string, findingId *s
 }
 
 func (n *jsiiProxy_NIST80053R4Checks) IgnoreRule(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) *string {
+	if err := n.validateIgnoreRuleParameters(ignores, ruleId, findingId); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -233,6 +263,9 @@ func (n *jsiiProxy_NIST80053R4Checks) IgnoreRule(ignores *[]*NagPackSuppression,
 }
 
 func (n *jsiiProxy_NIST80053R4Checks) InitializeStackReport(params IApplyRule) {
+	if err := n.validateInitializeStackReportParameters(params); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"initializeStackReport",
@@ -241,6 +274,9 @@ func (n *jsiiProxy_NIST80053R4Checks) InitializeStackReport(params IApplyRule) {
 }
 
 func (n *jsiiProxy_NIST80053R4Checks) Visit(node constructs.IConstruct) {
+	if err := n.validateVisitParameters(node); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"visit",
@@ -249,6 +285,9 @@ func (n *jsiiProxy_NIST80053R4Checks) Visit(node constructs.IConstruct) {
 }
 
 func (n *jsiiProxy_NIST80053R4Checks) WriteToStackComplianceReport(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) {
+	if err := n.validateWriteToStackComplianceReportParameters(params, ruleId, compliance); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"writeToStackComplianceReport",

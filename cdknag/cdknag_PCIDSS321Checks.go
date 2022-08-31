@@ -122,6 +122,9 @@ func (j *jsiiProxy_PCIDSS321Checks) Verbose() *bool {
 func NewPCIDSS321Checks(props *NagPackProps) PCIDSS321Checks {
 	_init_.Initialize()
 
+	if err := validateNewPCIDSS321ChecksParameters(props); err != nil {
+		panic(err)
+	}
 	j := jsiiProxy_PCIDSS321Checks{}
 
 	_jsii_.Create(
@@ -143,7 +146,10 @@ func NewPCIDSS321Checks_Override(p PCIDSS321Checks, props *NagPackProps) {
 	)
 }
 
-func (j *jsiiProxy_PCIDSS321Checks) SetLogIgnores(val *bool) {
+func (j *jsiiProxy_PCIDSS321Checks)SetLogIgnores(val *bool) {
+	if err := j.validateSetLogIgnoresParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"logIgnores",
@@ -151,7 +157,10 @@ func (j *jsiiProxy_PCIDSS321Checks) SetLogIgnores(val *bool) {
 	)
 }
 
-func (j *jsiiProxy_PCIDSS321Checks) SetPackName(val *string) {
+func (j *jsiiProxy_PCIDSS321Checks)SetPackName(val *string) {
+	if err := j.validateSetPackNameParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"packName",
@@ -159,7 +168,10 @@ func (j *jsiiProxy_PCIDSS321Checks) SetPackName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PCIDSS321Checks) SetReports(val *bool) {
+func (j *jsiiProxy_PCIDSS321Checks)SetReports(val *bool) {
+	if err := j.validateSetReportsParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"reports",
@@ -167,7 +179,10 @@ func (j *jsiiProxy_PCIDSS321Checks) SetReports(val *bool) {
 	)
 }
 
-func (j *jsiiProxy_PCIDSS321Checks) SetReportStacks(val *[]*string) {
+func (j *jsiiProxy_PCIDSS321Checks)SetReportStacks(val *[]*string) {
+	if err := j.validateSetReportStacksParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"reportStacks",
@@ -175,7 +190,10 @@ func (j *jsiiProxy_PCIDSS321Checks) SetReportStacks(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_PCIDSS321Checks) SetVerbose(val *bool) {
+func (j *jsiiProxy_PCIDSS321Checks)SetVerbose(val *bool) {
+	if err := j.validateSetVerboseParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"verbose",
@@ -184,6 +202,9 @@ func (j *jsiiProxy_PCIDSS321Checks) SetVerbose(val *bool) {
 }
 
 func (p *jsiiProxy_PCIDSS321Checks) ApplyRule(params IApplyRule) {
+	if err := p.validateApplyRuleParameters(params); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		p,
 		"applyRule",
@@ -192,6 +213,9 @@ func (p *jsiiProxy_PCIDSS321Checks) ApplyRule(params IApplyRule) {
 }
 
 func (p *jsiiProxy_PCIDSS321Checks) CreateComplianceReportLine(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) *string {
+	if err := p.validateCreateComplianceReportLineParameters(params, ruleId, compliance); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -205,6 +229,9 @@ func (p *jsiiProxy_PCIDSS321Checks) CreateComplianceReportLine(params IApplyRule
 }
 
 func (p *jsiiProxy_PCIDSS321Checks) CreateMessage(ruleId *string, findingId *string, info *string, explanation *string) *string {
+	if err := p.validateCreateMessageParameters(ruleId, findingId, info, explanation); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -218,6 +245,9 @@ func (p *jsiiProxy_PCIDSS321Checks) CreateMessage(ruleId *string, findingId *str
 }
 
 func (p *jsiiProxy_PCIDSS321Checks) IgnoreRule(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) *string {
+	if err := p.validateIgnoreRuleParameters(ignores, ruleId, findingId); err != nil {
+		panic(err)
+	}
 	var returns *string
 
 	_jsii_.Invoke(
@@ -231,6 +261,9 @@ func (p *jsiiProxy_PCIDSS321Checks) IgnoreRule(ignores *[]*NagPackSuppression, r
 }
 
 func (p *jsiiProxy_PCIDSS321Checks) InitializeStackReport(params IApplyRule) {
+	if err := p.validateInitializeStackReportParameters(params); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		p,
 		"initializeStackReport",
@@ -239,6 +272,9 @@ func (p *jsiiProxy_PCIDSS321Checks) InitializeStackReport(params IApplyRule) {
 }
 
 func (p *jsiiProxy_PCIDSS321Checks) Visit(node constructs.IConstruct) {
+	if err := p.validateVisitParameters(node); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		p,
 		"visit",
@@ -247,6 +283,9 @@ func (p *jsiiProxy_PCIDSS321Checks) Visit(node constructs.IConstruct) {
 }
 
 func (p *jsiiProxy_PCIDSS321Checks) WriteToStackComplianceReport(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) {
+	if err := p.validateWriteToStackComplianceReportParameters(params, ruleId, compliance); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		p,
 		"writeToStackComplianceReport",

@@ -49,6 +49,9 @@ func NewNagRules_Override(n NagRules) {
 func NagRules_ResolveIfPrimitive(node awscdk.CfnResource, parameter interface{}) interface{} {
 	_init_.Initialize()
 
+	if err := validateNagRules_ResolveIfPrimitiveParameters(node, parameter); err != nil {
+		panic(err)
+	}
 	var returns interface{}
 
 	_jsii_.StaticInvoke(
@@ -67,6 +70,9 @@ func NagRules_ResolveIfPrimitive(node awscdk.CfnResource, parameter interface{})
 func NagRules_ResolveResourceFromInstrinsic(node awscdk.CfnResource, parameter interface{}) interface{} {
 	_init_.Initialize()
 
+	if err := validateNagRules_ResolveResourceFromInstrinsicParameters(node, parameter); err != nil {
+		panic(err)
+	}
 	var returns interface{}
 
 	_jsii_.StaticInvoke(

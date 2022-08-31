@@ -34,6 +34,9 @@ type jsiiProxy_IApplyRule struct {
 }
 
 func (i *jsiiProxy_IApplyRule) Rule(node awscdk.CfnResource) interface{} {
+	if err := i.validateRuleParameters(node); err != nil {
+		panic(err)
+	}
 	var returns interface{}
 
 	_jsii_.Invoke(
@@ -56,7 +59,10 @@ func (j *jsiiProxy_IApplyRule) Explanation() *string {
 	return returns
 }
 
-func (j *jsiiProxy_IApplyRule) SetExplanation(val *string) {
+func (j *jsiiProxy_IApplyRule)SetExplanation(val *string) {
+	if err := j.validateSetExplanationParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"explanation",
@@ -74,7 +80,10 @@ func (j *jsiiProxy_IApplyRule) Info() *string {
 	return returns
 }
 
-func (j *jsiiProxy_IApplyRule) SetInfo(val *string) {
+func (j *jsiiProxy_IApplyRule)SetInfo(val *string) {
+	if err := j.validateSetInfoParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"info",
@@ -92,7 +101,10 @@ func (j *jsiiProxy_IApplyRule) Level() NagMessageLevel {
 	return returns
 }
 
-func (j *jsiiProxy_IApplyRule) SetLevel(val NagMessageLevel) {
+func (j *jsiiProxy_IApplyRule)SetLevel(val NagMessageLevel) {
+	if err := j.validateSetLevelParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"level",
@@ -110,7 +122,10 @@ func (j *jsiiProxy_IApplyRule) Node() awscdk.CfnResource {
 	return returns
 }
 
-func (j *jsiiProxy_IApplyRule) SetNode(val awscdk.CfnResource) {
+func (j *jsiiProxy_IApplyRule)SetNode(val awscdk.CfnResource) {
+	if err := j.validateSetNodeParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"node",
@@ -128,7 +143,7 @@ func (j *jsiiProxy_IApplyRule) RuleSuffixOverride() *string {
 	return returns
 }
 
-func (j *jsiiProxy_IApplyRule) SetRuleSuffixOverride(val *string) {
+func (j *jsiiProxy_IApplyRule)SetRuleSuffixOverride(val *string) {
 	_jsii_.Set(
 		j,
 		"ruleSuffixOverride",
