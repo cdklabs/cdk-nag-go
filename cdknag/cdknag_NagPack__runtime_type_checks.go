@@ -1,5 +1,4 @@
 //go:build !no_runtime_type_checking
-// +build !no_runtime_type_checking
 
 // Check CDK v2 applications for best practices using a combination on available rule packs.
 package cdknag
