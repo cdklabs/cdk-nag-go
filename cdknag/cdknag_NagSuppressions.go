@@ -6,7 +6,6 @@ import (
 	_init_ "github.com/cdklabs/cdk-nag-go/cdknag/v2/jsii"
 
 	"github.com/aws/aws-cdk-go/awscdk/v2"
-	"github.com/aws/constructs-go/constructs/v10"
 )
 
 // Helper class with methods to add cdk-nag suppressions to cdk resources.
@@ -43,7 +42,7 @@ func NewNagSuppressions_Override(n NagSuppressions) {
 }
 
 // Add cdk-nag suppressions to a CfnResource and optionally its children.
-func NagSuppressions_AddResourceSuppressions(construct constructs.IConstruct, suppressions *[]*NagPackSuppression, applyToChildren *bool) {
+func NagSuppressions_AddResourceSuppressions(construct interface{}, suppressions *[]*NagPackSuppression, applyToChildren *bool) {
 	_init_.Initialize()
 
 	if err := validateNagSuppressions_AddResourceSuppressionsParameters(construct, suppressions); err != nil {
@@ -57,7 +56,7 @@ func NagSuppressions_AddResourceSuppressions(construct constructs.IConstruct, su
 }
 
 // Add cdk-nag suppressions to a CfnResource and optionally its children via its path.
-func NagSuppressions_AddResourceSuppressionsByPath(stack awscdk.Stack, path *string, suppressions *[]*NagPackSuppression, applyToChildren *bool) {
+func NagSuppressions_AddResourceSuppressionsByPath(stack awscdk.Stack, path interface{}, suppressions *[]*NagPackSuppression, applyToChildren *bool) {
 	_init_.Initialize()
 
 	if err := validateNagSuppressions_AddResourceSuppressionsByPathParameters(stack, path, suppressions); err != nil {

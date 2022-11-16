@@ -12,9 +12,21 @@ import (
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
-func validateNagSuppressions_AddResourceSuppressionsParameters(construct constructs.IConstruct, suppressions *[]*NagPackSuppression) error {
+func validateNagSuppressions_AddResourceSuppressionsParameters(construct interface{}, suppressions *[]*NagPackSuppression) error {
 	if construct == nil {
 		return fmt.Errorf("parameter construct is required, but nil was provided")
+	}
+	switch construct.(type) {
+	case constructs.IConstruct:
+		// ok
+	case *[]constructs.IConstruct:
+		// ok
+	case []constructs.IConstruct:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(construct) {
+			return fmt.Errorf("parameter construct must be one of the allowed types: constructs.IConstruct, *[]constructs.IConstruct; received %#v (a %T)", construct, construct)
+		}
 	}
 
 	if suppressions == nil {
@@ -29,13 +41,25 @@ func validateNagSuppressions_AddResourceSuppressionsParameters(construct constru
 	return nil
 }
 
-func validateNagSuppressions_AddResourceSuppressionsByPathParameters(stack awscdk.Stack, path *string, suppressions *[]*NagPackSuppression) error {
+func validateNagSuppressions_AddResourceSuppressionsByPathParameters(stack awscdk.Stack, path interface{}, suppressions *[]*NagPackSuppression) error {
 	if stack == nil {
 		return fmt.Errorf("parameter stack is required, but nil was provided")
 	}
 
 	if path == nil {
 		return fmt.Errorf("parameter path is required, but nil was provided")
+	}
+	switch path.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case *[]*string:
+		// ok
+	case []*string:
+		// ok
+	default:
+		return fmt.Errorf("parameter path must be one of the allowed types: *string, *[]*string; received %#v (a %T)", path, path)
 	}
 
 	if suppressions == nil {

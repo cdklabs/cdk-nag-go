@@ -81,7 +81,32 @@ export class CdkTestStack extends Stack {
 ```
 
 </details><details>
-  <summary>Example 2) Child Constructs</summary>
+  <summary>Example 2) On Multiple Constructs</summary>
+
+```go
+import { SecurityGroup, Vpc, Peer, Port } from 'aws-cdk-lib/aws-ec2';
+import { Stack, StackProps } from 'aws-cdk-lib';
+import { Construct } from 'constructs';
+import { NagSuppressions } from 'cdk-nag';
+
+export class CdkTestStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
+    super(scope, id, props);
+    const vpc = new Vpc(this, 'vpc');
+    const test1 = new SecurityGroup(this, 'test', { vpc });
+    test1.addIngressRule(Peer.anyIpv4(), Port.allTraffic());
+    const test2 = new SecurityGroup(this, 'test', { vpc });
+    test2.addIngressRule(Peer.anyIpv4(), Port.allTraffic());
+    NagSuppressions.addResourceSuppressions(
+      [test1, test2],
+      [{ id: 'AwsSolutions-EC23', reason: 'lorem ipsum' }]
+    );
+  }
+}
+```
+
+</details><details>
+  <summary>Example 3) Child Constructs</summary>
 
 ```go
 import { User, PolicyStatement } from 'aws-cdk-lib/aws-iam';
@@ -116,7 +141,7 @@ export class CdkTestStack extends Stack {
 ```
 
 </details><details>
-  <summary>Example 3) Stack Level </summary>
+  <summary>Example 4) Stack Level </summary>
 
 ```go
 import { App, Aspects } from 'aws-cdk-lib';
@@ -132,7 +157,7 @@ NagSuppressions.addStackSuppressions(stack, [
 ```
 
 </details><details>
-  <summary>Example 4) Construct path</summary>
+  <summary>Example 5) Construct path</summary>
 
 If you received the following error on synth/deploy
 
@@ -164,7 +189,7 @@ export class CdkTestStack extends Stack {
 ```
 
 </details><details>
-  <summary>Example 5) Granular Suppressions of findings</summary>
+  <summary>Example 6) Granular Suppressions of findings</summary>
 
 Certain rules support granular suppressions of `findings`. If you received the following errors on synth/deploy
 

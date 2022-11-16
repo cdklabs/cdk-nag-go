@@ -5,11 +5,11 @@ package cdknag
 
 // Building without runtime type checking enabled, so all the below just return nil
 
-func validateNagSuppressions_AddResourceSuppressionsParameters(construct constructs.IConstruct, suppressions *[]*NagPackSuppression) error {
+func validateNagSuppressions_AddResourceSuppressionsParameters(construct interface{}, suppressions *[]*NagPackSuppression) error {
 	return nil
 }
 
-func validateNagSuppressions_AddResourceSuppressionsByPathParameters(stack awscdk.Stack, path *string, suppressions *[]*NagPackSuppression) error {
+func validateNagSuppressions_AddResourceSuppressionsByPathParameters(stack awscdk.Stack, path interface{}, suppressions *[]*NagPackSuppression) error {
 	return nil
 }
 
