@@ -17,7 +17,7 @@ func (a *jsiiProxy_AwsSolutionsChecks) validateCreateMessageParameters(ruleId *s
 	return nil
 }
 
-func (a *jsiiProxy_AwsSolutionsChecks) validateIgnoreRuleParameters(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) error {
+func (a *jsiiProxy_AwsSolutionsChecks) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
 	return nil
 }
 

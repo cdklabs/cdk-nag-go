@@ -14,13 +14,16 @@ type IApplyRule interface {
 	// Why the rule exists.
 	Explanation() *string
 	SetExplanation(e *string)
+	// A condition in which a suppression should be ignored.
+	IgnoreSuppressionCondition() INagSuppressionIgnore
+	SetIgnoreSuppressionCondition(i INagSuppressionIgnore)
 	// Why the rule was triggered.
 	Info() *string
 	SetInfo(i *string)
 	// The annotations message level to apply to the rule if triggered.
 	Level() NagMessageLevel
 	SetLevel(l NagMessageLevel)
-	// Ignores listed in cdk-nag metadata.
+	// The CfnResource to check.
 	Node() awscdk.CfnResource
 	SetNode(n awscdk.CfnResource)
 	// Override for the suffix of the Rule ID for this rule.
@@ -66,6 +69,24 @@ func (j *jsiiProxy_IApplyRule)SetExplanation(val *string) {
 	_jsii_.Set(
 		j,
 		"explanation",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IApplyRule) IgnoreSuppressionCondition() INagSuppressionIgnore {
+	var returns INagSuppressionIgnore
+	_jsii_.Get(
+		j,
+		"ignoreSuppressionCondition",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IApplyRule)SetIgnoreSuppressionCondition(val INagSuppressionIgnore) {
+	_jsii_.Set(
+		j,
+		"ignoreSuppressionCondition",
 		val,
 	)
 }

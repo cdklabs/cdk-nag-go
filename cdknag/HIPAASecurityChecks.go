@@ -5,6 +5,7 @@ import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 	_init_ "github.com/cdklabs/cdk-nag-go/cdknag/v2/jsii"
 
+	"github.com/aws/aws-cdk-go/awscdk/v2"
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
@@ -15,6 +16,8 @@ type HIPAASecurityChecks interface {
 	NagPack
 	LogIgnores() *bool
 	SetLogIgnores(val *bool)
+	PackGlobalSuppressionIgnore() INagSuppressionIgnore
+	SetPackGlobalSuppressionIgnore(val INagSuppressionIgnore)
 	PackName() *string
 	SetPackName(val *string)
 	ReadPackName() *string
@@ -23,6 +26,8 @@ type HIPAASecurityChecks interface {
 	SetReports(val *bool)
 	ReportStacks() *[]*string
 	SetReportStacks(val *[]*string)
+	UserGlobalSuppressionIgnore() INagSuppressionIgnore
+	SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore)
 	Verbose() *bool
 	SetVerbose(val *bool)
 	// Create a rule to be used in the NagPack.
@@ -36,7 +41,7 @@ type HIPAASecurityChecks interface {
 	// Check whether a specific rule should be ignored.
 	//
 	// Returns: The reason the rule was ignored, or an empty string.
-	IgnoreRule(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) *string
+	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string
 	// Initialize the report for the rule pack's compliance report for the resource's Stack if it doesn't exist.
 	InitializeStackReport(params IApplyRule)
 	// All aspects can visit an IConstruct.
@@ -55,6 +60,16 @@ func (j *jsiiProxy_HIPAASecurityChecks) LogIgnores() *bool {
 	_jsii_.Get(
 		j,
 		"logIgnores",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HIPAASecurityChecks) PackGlobalSuppressionIgnore() INagSuppressionIgnore {
+	var returns INagSuppressionIgnore
+	_jsii_.Get(
+		j,
+		"packGlobalSuppressionIgnore",
 		&returns,
 	)
 	return returns
@@ -110,6 +125,16 @@ func (j *jsiiProxy_HIPAASecurityChecks) ReportStacks() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_HIPAASecurityChecks) UserGlobalSuppressionIgnore() INagSuppressionIgnore {
+	var returns INagSuppressionIgnore
+	_jsii_.Get(
+		j,
+		"userGlobalSuppressionIgnore",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_HIPAASecurityChecks) Verbose() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -159,6 +184,14 @@ func (j *jsiiProxy_HIPAASecurityChecks)SetLogIgnores(val *bool) {
 	)
 }
 
+func (j *jsiiProxy_HIPAASecurityChecks)SetPackGlobalSuppressionIgnore(val INagSuppressionIgnore) {
+	_jsii_.Set(
+		j,
+		"packGlobalSuppressionIgnore",
+		val,
+	)
+}
+
 func (j *jsiiProxy_HIPAASecurityChecks)SetPackName(val *string) {
 	if err := j.validateSetPackNameParameters(val); err != nil {
 		panic(err)
@@ -188,6 +221,14 @@ func (j *jsiiProxy_HIPAASecurityChecks)SetReportStacks(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"reportStacks",
+		val,
+	)
+}
+
+func (j *jsiiProxy_HIPAASecurityChecks)SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore) {
+	_jsii_.Set(
+		j,
+		"userGlobalSuppressionIgnore",
 		val,
 	)
 }
@@ -246,8 +287,8 @@ func (h *jsiiProxy_HIPAASecurityChecks) CreateMessage(ruleId *string, findingId 
 	return returns
 }
 
-func (h *jsiiProxy_HIPAASecurityChecks) IgnoreRule(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) *string {
-	if err := h.validateIgnoreRuleParameters(ignores, ruleId, findingId); err != nil {
+func (h *jsiiProxy_HIPAASecurityChecks) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string {
+	if err := h.validateIgnoreRuleParameters(suppressions, ruleId, findingId, resource, level); err != nil {
 		panic(err)
 	}
 	var returns *string
@@ -255,7 +296,7 @@ func (h *jsiiProxy_HIPAASecurityChecks) IgnoreRule(ignores *[]*NagPackSuppressio
 	_jsii_.Invoke(
 		h,
 		"ignoreRule",
-		[]interface{}{ignores, ruleId, findingId},
+		[]interface{}{suppressions, ruleId, findingId, resource, level, ignoreSuppressionCondition},
 		&returns,
 	)
 

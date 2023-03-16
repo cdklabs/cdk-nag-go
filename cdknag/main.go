@@ -17,11 +17,13 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
 			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
 			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readReportStacks", GoGetter: "ReadReportStacks"},
 			_jsii_.MemberProperty{JsiiProperty: "reports", GoGetter: "Reports"},
 			_jsii_.MemberProperty{JsiiProperty: "reportStacks", GoGetter: "ReportStacks"},
+			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
 			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
 			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
@@ -42,11 +44,13 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
 			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
 			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readReportStacks", GoGetter: "ReadReportStacks"},
 			_jsii_.MemberProperty{JsiiProperty: "reports", GoGetter: "Reports"},
 			_jsii_.MemberProperty{JsiiProperty: "reportStacks", GoGetter: "ReportStacks"},
+			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
 			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
 			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
@@ -62,6 +66,7 @@ func init() {
 		reflect.TypeOf((*IApplyRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "explanation", GoGetter: "Explanation"},
+			_jsii_.MemberProperty{JsiiProperty: "ignoreSuppressionCondition", GoGetter: "IgnoreSuppressionCondition"},
 			_jsii_.MemberProperty{JsiiProperty: "info", GoGetter: "Info"},
 			_jsii_.MemberProperty{JsiiProperty: "level", GoGetter: "Level"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -70,6 +75,16 @@ func init() {
 		},
 		func() interface{} {
 			return &jsiiProxy_IApplyRule{}
+		},
+	)
+	_jsii_.RegisterInterface(
+		"cdk-nag.INagSuppressionIgnore",
+		reflect.TypeOf((*INagSuppressionIgnore)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
+		},
+		func() interface{} {
+			return &jsiiProxy_INagSuppressionIgnore{}
 		},
 	)
 	_jsii_.RegisterClass(
@@ -82,11 +97,13 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
 			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
 			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readReportStacks", GoGetter: "ReadReportStacks"},
 			_jsii_.MemberProperty{JsiiProperty: "reports", GoGetter: "Reports"},
 			_jsii_.MemberProperty{JsiiProperty: "reportStacks", GoGetter: "ReportStacks"},
+			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
 			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
 			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
@@ -107,11 +124,13 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
 			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
 			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readReportStacks", GoGetter: "ReadReportStacks"},
 			_jsii_.MemberProperty{JsiiProperty: "reports", GoGetter: "Reports"},
 			_jsii_.MemberProperty{JsiiProperty: "reportStacks", GoGetter: "ReportStacks"},
+			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
 			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
 			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
@@ -140,11 +159,13 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
 			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
 			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readReportStacks", GoGetter: "ReadReportStacks"},
 			_jsii_.MemberProperty{JsiiProperty: "reports", GoGetter: "Reports"},
 			_jsii_.MemberProperty{JsiiProperty: "reportStacks", GoGetter: "ReportStacks"},
+			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
 			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
 			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
@@ -198,11 +219,13 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
 			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
 			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readReportStacks", GoGetter: "ReadReportStacks"},
 			_jsii_.MemberProperty{JsiiProperty: "reports", GoGetter: "Reports"},
 			_jsii_.MemberProperty{JsiiProperty: "reportStacks", GoGetter: "ReportStacks"},
+			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
 			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
 			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
@@ -216,5 +239,69 @@ func init() {
 	_jsii_.RegisterStruct(
 		"cdk-nag.RegexAppliesTo",
 		reflect.TypeOf((*RegexAppliesTo)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"cdk-nag.SuppressionIgnoreAlways",
+		reflect.TypeOf((*SuppressionIgnoreAlways)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SuppressionIgnoreAlways{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagSuppressionIgnore)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"cdk-nag.SuppressionIgnoreAnd",
+		reflect.TypeOf((*SuppressionIgnoreAnd)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SuppressionIgnoreAnd{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagSuppressionIgnore)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"cdk-nag.SuppressionIgnoreErrors",
+		reflect.TypeOf((*SuppressionIgnoreErrors)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SuppressionIgnoreErrors{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagSuppressionIgnore)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"cdk-nag.SuppressionIgnoreInput",
+		reflect.TypeOf((*SuppressionIgnoreInput)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"cdk-nag.SuppressionIgnoreNever",
+		reflect.TypeOf((*SuppressionIgnoreNever)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SuppressionIgnoreNever{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagSuppressionIgnore)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"cdk-nag.SuppressionIgnoreOr",
+		reflect.TypeOf((*SuppressionIgnoreOr)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SuppressionIgnoreOr{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagSuppressionIgnore)
+			return &j
+		},
 	)
 }

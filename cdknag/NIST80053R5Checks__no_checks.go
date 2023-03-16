@@ -17,7 +17,7 @@ func (n *jsiiProxy_NIST80053R5Checks) validateCreateMessageParameters(ruleId *st
 	return nil
 }
 
-func (n *jsiiProxy_NIST80053R5Checks) validateIgnoreRuleParameters(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) error {
+func (n *jsiiProxy_NIST80053R5Checks) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
 	return nil
 }
 

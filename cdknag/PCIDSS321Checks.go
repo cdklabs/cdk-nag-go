@@ -5,6 +5,7 @@ import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 	_init_ "github.com/cdklabs/cdk-nag-go/cdknag/v2/jsii"
 
+	"github.com/aws/aws-cdk-go/awscdk/v2"
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
@@ -13,6 +14,8 @@ type PCIDSS321Checks interface {
 	NagPack
 	LogIgnores() *bool
 	SetLogIgnores(val *bool)
+	PackGlobalSuppressionIgnore() INagSuppressionIgnore
+	SetPackGlobalSuppressionIgnore(val INagSuppressionIgnore)
 	PackName() *string
 	SetPackName(val *string)
 	ReadPackName() *string
@@ -21,6 +24,8 @@ type PCIDSS321Checks interface {
 	SetReports(val *bool)
 	ReportStacks() *[]*string
 	SetReportStacks(val *[]*string)
+	UserGlobalSuppressionIgnore() INagSuppressionIgnore
+	SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore)
 	Verbose() *bool
 	SetVerbose(val *bool)
 	// Create a rule to be used in the NagPack.
@@ -34,7 +39,7 @@ type PCIDSS321Checks interface {
 	// Check whether a specific rule should be ignored.
 	//
 	// Returns: The reason the rule was ignored, or an empty string.
-	IgnoreRule(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) *string
+	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string
 	// Initialize the report for the rule pack's compliance report for the resource's Stack if it doesn't exist.
 	InitializeStackReport(params IApplyRule)
 	// All aspects can visit an IConstruct.
@@ -53,6 +58,16 @@ func (j *jsiiProxy_PCIDSS321Checks) LogIgnores() *bool {
 	_jsii_.Get(
 		j,
 		"logIgnores",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PCIDSS321Checks) PackGlobalSuppressionIgnore() INagSuppressionIgnore {
+	var returns INagSuppressionIgnore
+	_jsii_.Get(
+		j,
+		"packGlobalSuppressionIgnore",
 		&returns,
 	)
 	return returns
@@ -108,6 +123,16 @@ func (j *jsiiProxy_PCIDSS321Checks) ReportStacks() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_PCIDSS321Checks) UserGlobalSuppressionIgnore() INagSuppressionIgnore {
+	var returns INagSuppressionIgnore
+	_jsii_.Get(
+		j,
+		"userGlobalSuppressionIgnore",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_PCIDSS321Checks) Verbose() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -157,6 +182,14 @@ func (j *jsiiProxy_PCIDSS321Checks)SetLogIgnores(val *bool) {
 	)
 }
 
+func (j *jsiiProxy_PCIDSS321Checks)SetPackGlobalSuppressionIgnore(val INagSuppressionIgnore) {
+	_jsii_.Set(
+		j,
+		"packGlobalSuppressionIgnore",
+		val,
+	)
+}
+
 func (j *jsiiProxy_PCIDSS321Checks)SetPackName(val *string) {
 	if err := j.validateSetPackNameParameters(val); err != nil {
 		panic(err)
@@ -186,6 +219,14 @@ func (j *jsiiProxy_PCIDSS321Checks)SetReportStacks(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"reportStacks",
+		val,
+	)
+}
+
+func (j *jsiiProxy_PCIDSS321Checks)SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore) {
+	_jsii_.Set(
+		j,
+		"userGlobalSuppressionIgnore",
 		val,
 	)
 }
@@ -244,8 +285,8 @@ func (p *jsiiProxy_PCIDSS321Checks) CreateMessage(ruleId *string, findingId *str
 	return returns
 }
 
-func (p *jsiiProxy_PCIDSS321Checks) IgnoreRule(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) *string {
-	if err := p.validateIgnoreRuleParameters(ignores, ruleId, findingId); err != nil {
+func (p *jsiiProxy_PCIDSS321Checks) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string {
+	if err := p.validateIgnoreRuleParameters(suppressions, ruleId, findingId, resource, level); err != nil {
 		panic(err)
 	}
 	var returns *string
@@ -253,7 +294,7 @@ func (p *jsiiProxy_PCIDSS321Checks) IgnoreRule(ignores *[]*NagPackSuppression, r
 	_jsii_.Invoke(
 		p,
 		"ignoreRule",
-		[]interface{}{ignores, ruleId, findingId},
+		[]interface{}{suppressions, ruleId, findingId, resource, level, ignoreSuppressionCondition},
 		&returns,
 	)
 

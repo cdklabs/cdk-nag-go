@@ -2,7 +2,7 @@
 package cdknag
 
 
-// The level of the message that the rule applies.
+// The severity level of the rule.
 type NagMessageLevel string
 
 const (

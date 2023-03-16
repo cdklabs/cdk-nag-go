@@ -8,6 +8,7 @@ import (
 
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 
+	"github.com/aws/aws-cdk-go/awscdk/v2"
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
@@ -67,12 +68,12 @@ func (a *jsiiProxy_AwsSolutionsChecks) validateCreateMessageParameters(ruleId *s
 	return nil
 }
 
-func (a *jsiiProxy_AwsSolutionsChecks) validateIgnoreRuleParameters(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) error {
-	if ignores == nil {
-		return fmt.Errorf("parameter ignores is required, but nil was provided")
+func (a *jsiiProxy_AwsSolutionsChecks) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
+	if suppressions == nil {
+		return fmt.Errorf("parameter suppressions is required, but nil was provided")
 	}
-	for idx_045ee9, v := range *ignores {
-		if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter ignores[%#v]", idx_045ee9) }); err != nil {
+	for idx_1cb3ae, v := range *suppressions {
+		if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter suppressions[%#v]", idx_1cb3ae) }); err != nil {
 			return err
 		}
 	}
@@ -83,6 +84,14 @@ func (a *jsiiProxy_AwsSolutionsChecks) validateIgnoreRuleParameters(ignores *[]*
 
 	if findingId == nil {
 		return fmt.Errorf("parameter findingId is required, but nil was provided")
+	}
+
+	if resource == nil {
+		return fmt.Errorf("parameter resource is required, but nil was provided")
+	}
+
+	if level == "" {
+		return fmt.Errorf("parameter level is required, but nil was provided")
 	}
 
 	return nil

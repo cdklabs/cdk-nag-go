@@ -17,7 +17,7 @@ func (h *jsiiProxy_HIPAASecurityChecks) validateCreateMessageParameters(ruleId *
 	return nil
 }
 
-func (h *jsiiProxy_HIPAASecurityChecks) validateIgnoreRuleParameters(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) error {
+func (h *jsiiProxy_HIPAASecurityChecks) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
 	return nil
 }
 

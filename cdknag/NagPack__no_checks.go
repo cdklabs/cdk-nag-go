@@ -17,7 +17,7 @@ func (n *jsiiProxy_NagPack) validateCreateMessageParameters(ruleId *string, find
 	return nil
 }
 
-func (n *jsiiProxy_NagPack) validateIgnoreRuleParameters(ignores *[]*NagPackSuppression, ruleId *string, findingId *string) error {
+func (n *jsiiProxy_NagPack) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
 	return nil
 }
 
