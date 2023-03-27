@@ -20,54 +20,6 @@ func (n *jsiiProxy_NagPack) validateApplyRuleParameters(params IApplyRule) error
 	return nil
 }
 
-func (n *jsiiProxy_NagPack) validateCreateComplianceReportLineParameters(params IApplyRule, ruleId *string, compliance interface{}) error {
-	if params == nil {
-		return fmt.Errorf("parameter params is required, but nil was provided")
-	}
-
-	if ruleId == nil {
-		return fmt.Errorf("parameter ruleId is required, but nil was provided")
-	}
-
-	if compliance == nil {
-		return fmt.Errorf("parameter compliance is required, but nil was provided")
-	}
-	switch compliance.(type) {
-	case NagRuleCompliance:
-		// ok
-	case *string:
-		// ok
-	case string:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(compliance) {
-			return fmt.Errorf("parameter compliance must be one of the allowed types: NagRuleCompliance, *string; received %#v (a %T)", compliance, compliance)
-		}
-	}
-
-	return nil
-}
-
-func (n *jsiiProxy_NagPack) validateCreateMessageParameters(ruleId *string, findingId *string, info *string, explanation *string) error {
-	if ruleId == nil {
-		return fmt.Errorf("parameter ruleId is required, but nil was provided")
-	}
-
-	if findingId == nil {
-		return fmt.Errorf("parameter findingId is required, but nil was provided")
-	}
-
-	if info == nil {
-		return fmt.Errorf("parameter info is required, but nil was provided")
-	}
-
-	if explanation == nil {
-		return fmt.Errorf("parameter explanation is required, but nil was provided")
-	}
-
-	return nil
-}
-
 func (n *jsiiProxy_NagPack) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
 	if suppressions == nil {
 		return fmt.Errorf("parameter suppressions is required, but nil was provided")
@@ -97,14 +49,6 @@ func (n *jsiiProxy_NagPack) validateIgnoreRuleParameters(suppressions *[]*NagPac
 	return nil
 }
 
-func (n *jsiiProxy_NagPack) validateInitializeStackReportParameters(params IApplyRule) error {
-	if params == nil {
-		return fmt.Errorf("parameter params is required, but nil was provided")
-	}
-
-	return nil
-}
-
 func (n *jsiiProxy_NagPack) validateVisitParameters(node constructs.IConstruct) error {
 	if node == nil {
 		return fmt.Errorf("parameter node is required, but nil was provided")
@@ -113,35 +57,7 @@ func (n *jsiiProxy_NagPack) validateVisitParameters(node constructs.IConstruct) 
 	return nil
 }
 
-func (n *jsiiProxy_NagPack) validateWriteToStackComplianceReportParameters(params IApplyRule, ruleId *string, compliance interface{}) error {
-	if params == nil {
-		return fmt.Errorf("parameter params is required, but nil was provided")
-	}
-
-	if ruleId == nil {
-		return fmt.Errorf("parameter ruleId is required, but nil was provided")
-	}
-
-	if compliance == nil {
-		return fmt.Errorf("parameter compliance is required, but nil was provided")
-	}
-	switch compliance.(type) {
-	case NagRuleCompliance:
-		// ok
-	case *string:
-		// ok
-	case string:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(compliance) {
-			return fmt.Errorf("parameter compliance must be one of the allowed types: NagRuleCompliance, *string; received %#v (a %T)", compliance, compliance)
-		}
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_NagPack) validateSetLogIgnoresParameters(val *bool) error {
+func (j *jsiiProxy_NagPack) validateSetLoggersParameters(val *[]INagLogger) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -150,30 +66,6 @@ func (j *jsiiProxy_NagPack) validateSetLogIgnoresParameters(val *bool) error {
 }
 
 func (j *jsiiProxy_NagPack) validateSetPackNameParameters(val *string) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_NagPack) validateSetReportsParameters(val *bool) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_NagPack) validateSetReportStacksParameters(val *[]*string) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_NagPack) validateSetVerboseParameters(val *bool) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

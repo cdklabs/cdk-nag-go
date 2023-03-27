@@ -8,25 +8,42 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
+		"cdk-nag.AnnotationLogger",
+		reflect.TypeOf((*AnnotationLogger)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
+			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberMethod{JsiiMethod: "onCompliance", GoMethod: "OnCompliance"},
+			_jsii_.MemberMethod{JsiiMethod: "onError", GoMethod: "OnError"},
+			_jsii_.MemberMethod{JsiiMethod: "onNonCompliance", GoMethod: "OnNonCompliance"},
+			_jsii_.MemberMethod{JsiiMethod: "onNotApplicable", GoMethod: "OnNotApplicable"},
+			_jsii_.MemberMethod{JsiiMethod: "onSuppressed", GoMethod: "OnSuppressed"},
+			_jsii_.MemberMethod{JsiiMethod: "onSuppressedError", GoMethod: "OnSuppressedError"},
+			_jsii_.MemberProperty{JsiiProperty: "suppressionId", GoGetter: "SuppressionId"},
+			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
+		},
+		func() interface{} {
+			j := jsiiProxy_AnnotationLogger{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagLogger)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"cdk-nag.AnnotationLoggerProps",
+		reflect.TypeOf((*AnnotationLoggerProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
 		"cdk-nag.AwsSolutionsChecks",
 		reflect.TypeOf((*AwsSolutionsChecks)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "createComplianceReportLine", GoMethod: "CreateComplianceReportLine"},
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
 			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
-			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
 			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "readReportStacks", GoGetter: "ReadReportStacks"},
-			_jsii_.MemberProperty{JsiiProperty: "reports", GoGetter: "Reports"},
-			_jsii_.MemberProperty{JsiiProperty: "reportStacks", GoGetter: "ReportStacks"},
 			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
 			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
-			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
 		},
 		func() interface{} {
 			j := jsiiProxy_AwsSolutionsChecks{}
@@ -39,21 +56,13 @@ func init() {
 		reflect.TypeOf((*HIPAASecurityChecks)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "createComplianceReportLine", GoMethod: "CreateComplianceReportLine"},
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
 			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
-			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
 			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "readReportStacks", GoGetter: "ReadReportStacks"},
-			_jsii_.MemberProperty{JsiiProperty: "reports", GoGetter: "Reports"},
-			_jsii_.MemberProperty{JsiiProperty: "reportStacks", GoGetter: "ReportStacks"},
 			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
 			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
-			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
 		},
 		func() interface{} {
 			j := jsiiProxy_HIPAASecurityChecks{}
@@ -78,6 +87,21 @@ func init() {
 		},
 	)
 	_jsii_.RegisterInterface(
+		"cdk-nag.INagLogger",
+		reflect.TypeOf((*INagLogger)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "onCompliance", GoMethod: "OnCompliance"},
+			_jsii_.MemberMethod{JsiiMethod: "onError", GoMethod: "OnError"},
+			_jsii_.MemberMethod{JsiiMethod: "onNonCompliance", GoMethod: "OnNonCompliance"},
+			_jsii_.MemberMethod{JsiiMethod: "onNotApplicable", GoMethod: "OnNotApplicable"},
+			_jsii_.MemberMethod{JsiiMethod: "onSuppressed", GoMethod: "OnSuppressed"},
+			_jsii_.MemberMethod{JsiiMethod: "onSuppressedError", GoMethod: "OnSuppressedError"},
+		},
+		func() interface{} {
+			return &jsiiProxy_INagLogger{}
+		},
+	)
+	_jsii_.RegisterInterface(
 		"cdk-nag.INagSuppressionIgnore",
 		reflect.TypeOf((*INagSuppressionIgnore)(nil)).Elem(),
 		[]_jsii_.Member{
@@ -92,21 +116,13 @@ func init() {
 		reflect.TypeOf((*NIST80053R4Checks)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "createComplianceReportLine", GoMethod: "CreateComplianceReportLine"},
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
 			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
-			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
 			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "readReportStacks", GoGetter: "ReadReportStacks"},
-			_jsii_.MemberProperty{JsiiProperty: "reports", GoGetter: "Reports"},
-			_jsii_.MemberProperty{JsiiProperty: "reportStacks", GoGetter: "ReportStacks"},
 			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
 			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
-			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
 		},
 		func() interface{} {
 			j := jsiiProxy_NIST80053R4Checks{}
@@ -119,27 +135,47 @@ func init() {
 		reflect.TypeOf((*NIST80053R5Checks)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "createComplianceReportLine", GoMethod: "CreateComplianceReportLine"},
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
 			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
-			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
 			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "readReportStacks", GoGetter: "ReadReportStacks"},
-			_jsii_.MemberProperty{JsiiProperty: "reports", GoGetter: "Reports"},
-			_jsii_.MemberProperty{JsiiProperty: "reportStacks", GoGetter: "ReportStacks"},
 			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
 			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
-			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
 		},
 		func() interface{} {
 			j := jsiiProxy_NIST80053R5Checks{}
 			_jsii_.InitJsiiProxy(&j.jsiiProxy_NagPack)
 			return &j
 		},
+	)
+	_jsii_.RegisterStruct(
+		"cdk-nag.NagLoggerBaseData",
+		reflect.TypeOf((*NagLoggerBaseData)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"cdk-nag.NagLoggerComplianceData",
+		reflect.TypeOf((*NagLoggerComplianceData)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"cdk-nag.NagLoggerErrorData",
+		reflect.TypeOf((*NagLoggerErrorData)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"cdk-nag.NagLoggerNonComplianceData",
+		reflect.TypeOf((*NagLoggerNonComplianceData)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"cdk-nag.NagLoggerNotApplicableData",
+		reflect.TypeOf((*NagLoggerNotApplicableData)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"cdk-nag.NagLoggerSuppressedData",
+		reflect.TypeOf((*NagLoggerSuppressedData)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"cdk-nag.NagLoggerSuppressedErrorData",
+		reflect.TypeOf((*NagLoggerSuppressedErrorData)(nil)).Elem(),
 	)
 	_jsii_.RegisterEnum(
 		"cdk-nag.NagMessageLevel",
@@ -154,21 +190,13 @@ func init() {
 		reflect.TypeOf((*NagPack)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "createComplianceReportLine", GoMethod: "CreateComplianceReportLine"},
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
 			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
-			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
 			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "readReportStacks", GoGetter: "ReadReportStacks"},
-			_jsii_.MemberProperty{JsiiProperty: "reports", GoGetter: "Reports"},
-			_jsii_.MemberProperty{JsiiProperty: "reportStacks", GoGetter: "ReportStacks"},
 			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
 			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
-			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
 		},
 		func() interface{} {
 			j := jsiiProxy_NagPack{}
@@ -185,12 +213,61 @@ func init() {
 		reflect.TypeOf((*NagPackSuppression)(nil)).Elem(),
 	)
 	_jsii_.RegisterEnum(
+		"cdk-nag.NagReportFormat",
+		reflect.TypeOf((*NagReportFormat)(nil)).Elem(),
+		map[string]interface{}{
+			"CSV": NagReportFormat_CSV,
+			"JSON": NagReportFormat_JSON,
+		},
+	)
+	_jsii_.RegisterStruct(
+		"cdk-nag.NagReportLine",
+		reflect.TypeOf((*NagReportLine)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"cdk-nag.NagReportLogger",
+		reflect.TypeOf((*NagReportLogger)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "formats", GoGetter: "Formats"},
+			_jsii_.MemberMethod{JsiiMethod: "getFormatStacks", GoMethod: "GetFormatStacks"},
+			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
+			_jsii_.MemberMethod{JsiiMethod: "onCompliance", GoMethod: "OnCompliance"},
+			_jsii_.MemberMethod{JsiiMethod: "onError", GoMethod: "OnError"},
+			_jsii_.MemberMethod{JsiiMethod: "onNonCompliance", GoMethod: "OnNonCompliance"},
+			_jsii_.MemberMethod{JsiiMethod: "onNotApplicable", GoMethod: "OnNotApplicable"},
+			_jsii_.MemberMethod{JsiiMethod: "onSuppressed", GoMethod: "OnSuppressed"},
+			_jsii_.MemberMethod{JsiiMethod: "onSuppressedError", GoMethod: "OnSuppressedError"},
+			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
+		},
+		func() interface{} {
+			j := jsiiProxy_NagReportLogger{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagLogger)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"cdk-nag.NagReportLoggerProps",
+		reflect.TypeOf((*NagReportLoggerProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"cdk-nag.NagReportSchema",
+		reflect.TypeOf((*NagReportSchema)(nil)).Elem(),
+	)
+	_jsii_.RegisterEnum(
 		"cdk-nag.NagRuleCompliance",
 		reflect.TypeOf((*NagRuleCompliance)(nil)).Elem(),
 		map[string]interface{}{
 			"COMPLIANT": NagRuleCompliance_COMPLIANT,
 			"NON_COMPLIANT": NagRuleCompliance_NON_COMPLIANT,
 			"NOT_APPLICABLE": NagRuleCompliance_NOT_APPLICABLE,
+		},
+	)
+	_jsii_.RegisterEnum(
+		"cdk-nag.NagRulePostValidationStates",
+		reflect.TypeOf((*NagRulePostValidationStates)(nil)).Elem(),
+		map[string]interface{}{
+			"SUPPRESSED": NagRulePostValidationStates_SUPPRESSED,
+			"UNKNOWN": NagRulePostValidationStates_UNKNOWN,
 		},
 	)
 	_jsii_.RegisterClass(
@@ -214,21 +291,13 @@ func init() {
 		reflect.TypeOf((*PCIDSS321Checks)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "createComplianceReportLine", GoMethod: "CreateComplianceReportLine"},
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
 			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
-			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
+			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
 			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "readReportStacks", GoGetter: "ReadReportStacks"},
-			_jsii_.MemberProperty{JsiiProperty: "reports", GoGetter: "Reports"},
-			_jsii_.MemberProperty{JsiiProperty: "reportStacks", GoGetter: "ReportStacks"},
 			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
 			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
-			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
 		},
 		func() interface{} {
 			j := jsiiProxy_PCIDSS321Checks{}

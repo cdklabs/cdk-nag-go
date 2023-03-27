@@ -13,40 +13,23 @@ import (
 // Base class for all rule packs.
 type NagPack interface {
 	awscdk.IAspect
-	LogIgnores() *bool
-	SetLogIgnores(val *bool)
+	Loggers() *[]INagLogger
+	SetLoggers(val *[]INagLogger)
 	PackGlobalSuppressionIgnore() INagSuppressionIgnore
 	SetPackGlobalSuppressionIgnore(val INagSuppressionIgnore)
 	PackName() *string
 	SetPackName(val *string)
 	ReadPackName() *string
-	ReadReportStacks() *[]*string
-	Reports() *bool
-	SetReports(val *bool)
-	ReportStacks() *[]*string
-	SetReportStacks(val *[]*string)
 	UserGlobalSuppressionIgnore() INagSuppressionIgnore
 	SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore)
-	Verbose() *bool
-	SetVerbose(val *bool)
 	// Create a rule to be used in the NagPack.
 	ApplyRule(params IApplyRule)
-	// Helper function to create a line for the compliance report.
-	CreateComplianceReportLine(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) *string
-	// The message to output to the console when a rule is triggered.
-	//
-	// Returns: The formatted message string.
-	CreateMessage(ruleId *string, findingId *string, info *string, explanation *string) *string
 	// Check whether a specific rule should be ignored.
 	//
 	// Returns: The reason the rule was ignored, or an empty string.
 	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string
-	// Initialize the report for the rule pack's compliance report for the resource's Stack if it doesn't exist.
-	InitializeStackReport(params IApplyRule)
 	// All aspects can visit an IConstruct.
 	Visit(node constructs.IConstruct)
-	// Write a line to the rule pack's compliance report for the resource's Stack.
-	WriteToStackComplianceReport(params IApplyRule, ruleId *string, compliance interface{}, explanation *string)
 }
 
 // The jsii proxy struct for NagPack
@@ -54,11 +37,11 @@ type jsiiProxy_NagPack struct {
 	internal.Type__awscdkIAspect
 }
 
-func (j *jsiiProxy_NagPack) LogIgnores() *bool {
-	var returns *bool
+func (j *jsiiProxy_NagPack) Loggers() *[]INagLogger {
+	var returns *[]INagLogger
 	_jsii_.Get(
 		j,
-		"logIgnores",
+		"loggers",
 		&returns,
 	)
 	return returns
@@ -94,51 +77,11 @@ func (j *jsiiProxy_NagPack) ReadPackName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_NagPack) ReadReportStacks() *[]*string {
-	var returns *[]*string
-	_jsii_.Get(
-		j,
-		"readReportStacks",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_NagPack) Reports() *bool {
-	var returns *bool
-	_jsii_.Get(
-		j,
-		"reports",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_NagPack) ReportStacks() *[]*string {
-	var returns *[]*string
-	_jsii_.Get(
-		j,
-		"reportStacks",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_NagPack) UserGlobalSuppressionIgnore() INagSuppressionIgnore {
 	var returns INagSuppressionIgnore
 	_jsii_.Get(
 		j,
 		"userGlobalSuppressionIgnore",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_NagPack) Verbose() *bool {
-	var returns *bool
-	_jsii_.Get(
-		j,
-		"verbose",
 		&returns,
 	)
 	return returns
@@ -155,13 +98,13 @@ func NewNagPack_Override(n NagPack, props *NagPackProps) {
 	)
 }
 
-func (j *jsiiProxy_NagPack)SetLogIgnores(val *bool) {
-	if err := j.validateSetLogIgnoresParameters(val); err != nil {
+func (j *jsiiProxy_NagPack)SetLoggers(val *[]INagLogger) {
+	if err := j.validateSetLoggersParameters(val); err != nil {
 		panic(err)
 	}
 	_jsii_.Set(
 		j,
-		"logIgnores",
+		"loggers",
 		val,
 	)
 }
@@ -185,43 +128,10 @@ func (j *jsiiProxy_NagPack)SetPackName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NagPack)SetReports(val *bool) {
-	if err := j.validateSetReportsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"reports",
-		val,
-	)
-}
-
-func (j *jsiiProxy_NagPack)SetReportStacks(val *[]*string) {
-	if err := j.validateSetReportStacksParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"reportStacks",
-		val,
-	)
-}
-
 func (j *jsiiProxy_NagPack)SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore) {
 	_jsii_.Set(
 		j,
 		"userGlobalSuppressionIgnore",
-		val,
-	)
-}
-
-func (j *jsiiProxy_NagPack)SetVerbose(val *bool) {
-	if err := j.validateSetVerboseParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"verbose",
 		val,
 	)
 }
@@ -235,38 +145,6 @@ func (n *jsiiProxy_NagPack) ApplyRule(params IApplyRule) {
 		"applyRule",
 		[]interface{}{params},
 	)
-}
-
-func (n *jsiiProxy_NagPack) CreateComplianceReportLine(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) *string {
-	if err := n.validateCreateComplianceReportLineParameters(params, ruleId, compliance); err != nil {
-		panic(err)
-	}
-	var returns *string
-
-	_jsii_.Invoke(
-		n,
-		"createComplianceReportLine",
-		[]interface{}{params, ruleId, compliance, explanation},
-		&returns,
-	)
-
-	return returns
-}
-
-func (n *jsiiProxy_NagPack) CreateMessage(ruleId *string, findingId *string, info *string, explanation *string) *string {
-	if err := n.validateCreateMessageParameters(ruleId, findingId, info, explanation); err != nil {
-		panic(err)
-	}
-	var returns *string
-
-	_jsii_.Invoke(
-		n,
-		"createMessage",
-		[]interface{}{ruleId, findingId, info, explanation},
-		&returns,
-	)
-
-	return returns
 }
 
 func (n *jsiiProxy_NagPack) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string {
@@ -285,17 +163,6 @@ func (n *jsiiProxy_NagPack) IgnoreRule(suppressions *[]*NagPackSuppression, rule
 	return returns
 }
 
-func (n *jsiiProxy_NagPack) InitializeStackReport(params IApplyRule) {
-	if err := n.validateInitializeStackReportParameters(params); err != nil {
-		panic(err)
-	}
-	_jsii_.InvokeVoid(
-		n,
-		"initializeStackReport",
-		[]interface{}{params},
-	)
-}
-
 func (n *jsiiProxy_NagPack) Visit(node constructs.IConstruct) {
 	if err := n.validateVisitParameters(node); err != nil {
 		panic(err)
@@ -304,17 +171,6 @@ func (n *jsiiProxy_NagPack) Visit(node constructs.IConstruct) {
 		n,
 		"visit",
 		[]interface{}{node},
-	)
-}
-
-func (n *jsiiProxy_NagPack) WriteToStackComplianceReport(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) {
-	if err := n.validateWriteToStackComplianceReportParameters(params, ruleId, compliance); err != nil {
-		panic(err)
-	}
-	_jsii_.InvokeVoid(
-		n,
-		"writeToStackComplianceReport",
-		[]interface{}{params, ruleId, compliance, explanation},
 	)
 }
 

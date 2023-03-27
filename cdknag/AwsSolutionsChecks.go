@@ -12,40 +12,23 @@ import (
 // Check Best practices based on AWS Solutions Security Matrix.
 type AwsSolutionsChecks interface {
 	NagPack
-	LogIgnores() *bool
-	SetLogIgnores(val *bool)
+	Loggers() *[]INagLogger
+	SetLoggers(val *[]INagLogger)
 	PackGlobalSuppressionIgnore() INagSuppressionIgnore
 	SetPackGlobalSuppressionIgnore(val INagSuppressionIgnore)
 	PackName() *string
 	SetPackName(val *string)
 	ReadPackName() *string
-	ReadReportStacks() *[]*string
-	Reports() *bool
-	SetReports(val *bool)
-	ReportStacks() *[]*string
-	SetReportStacks(val *[]*string)
 	UserGlobalSuppressionIgnore() INagSuppressionIgnore
 	SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore)
-	Verbose() *bool
-	SetVerbose(val *bool)
 	// Create a rule to be used in the NagPack.
 	ApplyRule(params IApplyRule)
-	// Helper function to create a line for the compliance report.
-	CreateComplianceReportLine(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) *string
-	// The message to output to the console when a rule is triggered.
-	//
-	// Returns: The formatted message string.
-	CreateMessage(ruleId *string, findingId *string, info *string, explanation *string) *string
 	// Check whether a specific rule should be ignored.
 	//
 	// Returns: The reason the rule was ignored, or an empty string.
 	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string
-	// Initialize the report for the rule pack's compliance report for the resource's Stack if it doesn't exist.
-	InitializeStackReport(params IApplyRule)
 	// All aspects can visit an IConstruct.
 	Visit(node constructs.IConstruct)
-	// Write a line to the rule pack's compliance report for the resource's Stack.
-	WriteToStackComplianceReport(params IApplyRule, ruleId *string, compliance interface{}, explanation *string)
 }
 
 // The jsii proxy struct for AwsSolutionsChecks
@@ -53,11 +36,11 @@ type jsiiProxy_AwsSolutionsChecks struct {
 	jsiiProxy_NagPack
 }
 
-func (j *jsiiProxy_AwsSolutionsChecks) LogIgnores() *bool {
-	var returns *bool
+func (j *jsiiProxy_AwsSolutionsChecks) Loggers() *[]INagLogger {
+	var returns *[]INagLogger
 	_jsii_.Get(
 		j,
-		"logIgnores",
+		"loggers",
 		&returns,
 	)
 	return returns
@@ -93,51 +76,11 @@ func (j *jsiiProxy_AwsSolutionsChecks) ReadPackName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AwsSolutionsChecks) ReadReportStacks() *[]*string {
-	var returns *[]*string
-	_jsii_.Get(
-		j,
-		"readReportStacks",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsSolutionsChecks) Reports() *bool {
-	var returns *bool
-	_jsii_.Get(
-		j,
-		"reports",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsSolutionsChecks) ReportStacks() *[]*string {
-	var returns *[]*string
-	_jsii_.Get(
-		j,
-		"reportStacks",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_AwsSolutionsChecks) UserGlobalSuppressionIgnore() INagSuppressionIgnore {
 	var returns INagSuppressionIgnore
 	_jsii_.Get(
 		j,
 		"userGlobalSuppressionIgnore",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsSolutionsChecks) Verbose() *bool {
-	var returns *bool
-	_jsii_.Get(
-		j,
-		"verbose",
 		&returns,
 	)
 	return returns
@@ -171,13 +114,13 @@ func NewAwsSolutionsChecks_Override(a AwsSolutionsChecks, props *NagPackProps) {
 	)
 }
 
-func (j *jsiiProxy_AwsSolutionsChecks)SetLogIgnores(val *bool) {
-	if err := j.validateSetLogIgnoresParameters(val); err != nil {
+func (j *jsiiProxy_AwsSolutionsChecks)SetLoggers(val *[]INagLogger) {
+	if err := j.validateSetLoggersParameters(val); err != nil {
 		panic(err)
 	}
 	_jsii_.Set(
 		j,
-		"logIgnores",
+		"loggers",
 		val,
 	)
 }
@@ -201,43 +144,10 @@ func (j *jsiiProxy_AwsSolutionsChecks)SetPackName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AwsSolutionsChecks)SetReports(val *bool) {
-	if err := j.validateSetReportsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"reports",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsSolutionsChecks)SetReportStacks(val *[]*string) {
-	if err := j.validateSetReportStacksParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"reportStacks",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AwsSolutionsChecks)SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore) {
 	_jsii_.Set(
 		j,
 		"userGlobalSuppressionIgnore",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsSolutionsChecks)SetVerbose(val *bool) {
-	if err := j.validateSetVerboseParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"verbose",
 		val,
 	)
 }
@@ -251,38 +161,6 @@ func (a *jsiiProxy_AwsSolutionsChecks) ApplyRule(params IApplyRule) {
 		"applyRule",
 		[]interface{}{params},
 	)
-}
-
-func (a *jsiiProxy_AwsSolutionsChecks) CreateComplianceReportLine(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) *string {
-	if err := a.validateCreateComplianceReportLineParameters(params, ruleId, compliance); err != nil {
-		panic(err)
-	}
-	var returns *string
-
-	_jsii_.Invoke(
-		a,
-		"createComplianceReportLine",
-		[]interface{}{params, ruleId, compliance, explanation},
-		&returns,
-	)
-
-	return returns
-}
-
-func (a *jsiiProxy_AwsSolutionsChecks) CreateMessage(ruleId *string, findingId *string, info *string, explanation *string) *string {
-	if err := a.validateCreateMessageParameters(ruleId, findingId, info, explanation); err != nil {
-		panic(err)
-	}
-	var returns *string
-
-	_jsii_.Invoke(
-		a,
-		"createMessage",
-		[]interface{}{ruleId, findingId, info, explanation},
-		&returns,
-	)
-
-	return returns
 }
 
 func (a *jsiiProxy_AwsSolutionsChecks) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string {
@@ -301,17 +179,6 @@ func (a *jsiiProxy_AwsSolutionsChecks) IgnoreRule(suppressions *[]*NagPackSuppre
 	return returns
 }
 
-func (a *jsiiProxy_AwsSolutionsChecks) InitializeStackReport(params IApplyRule) {
-	if err := a.validateInitializeStackReportParameters(params); err != nil {
-		panic(err)
-	}
-	_jsii_.InvokeVoid(
-		a,
-		"initializeStackReport",
-		[]interface{}{params},
-	)
-}
-
 func (a *jsiiProxy_AwsSolutionsChecks) Visit(node constructs.IConstruct) {
 	if err := a.validateVisitParameters(node); err != nil {
 		panic(err)
@@ -320,17 +187,6 @@ func (a *jsiiProxy_AwsSolutionsChecks) Visit(node constructs.IConstruct) {
 		a,
 		"visit",
 		[]interface{}{node},
-	)
-}
-
-func (a *jsiiProxy_AwsSolutionsChecks) WriteToStackComplianceReport(params IApplyRule, ruleId *string, compliance interface{}, explanation *string) {
-	if err := a.validateWriteToStackComplianceReportParameters(params, ruleId, compliance); err != nil {
-		panic(err)
-	}
-	_jsii_.InvokeVoid(
-		a,
-		"writeToStackComplianceReport",
-		[]interface{}{params, ruleId, compliance, explanation},
 	)
 }
 

@@ -9,19 +9,7 @@ func (p *jsiiProxy_PCIDSS321Checks) validateApplyRuleParameters(params IApplyRul
 	return nil
 }
 
-func (p *jsiiProxy_PCIDSS321Checks) validateCreateComplianceReportLineParameters(params IApplyRule, ruleId *string, compliance interface{}) error {
-	return nil
-}
-
-func (p *jsiiProxy_PCIDSS321Checks) validateCreateMessageParameters(ruleId *string, findingId *string, info *string, explanation *string) error {
-	return nil
-}
-
 func (p *jsiiProxy_PCIDSS321Checks) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
-	return nil
-}
-
-func (p *jsiiProxy_PCIDSS321Checks) validateInitializeStackReportParameters(params IApplyRule) error {
 	return nil
 }
 
@@ -29,27 +17,11 @@ func (p *jsiiProxy_PCIDSS321Checks) validateVisitParameters(node constructs.ICon
 	return nil
 }
 
-func (p *jsiiProxy_PCIDSS321Checks) validateWriteToStackComplianceReportParameters(params IApplyRule, ruleId *string, compliance interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_PCIDSS321Checks) validateSetLogIgnoresParameters(val *bool) error {
+func (j *jsiiProxy_PCIDSS321Checks) validateSetLoggersParameters(val *[]INagLogger) error {
 	return nil
 }
 
 func (j *jsiiProxy_PCIDSS321Checks) validateSetPackNameParameters(val *string) error {
-	return nil
-}
-
-func (j *jsiiProxy_PCIDSS321Checks) validateSetReportsParameters(val *bool) error {
-	return nil
-}
-
-func (j *jsiiProxy_PCIDSS321Checks) validateSetReportStacksParameters(val *[]*string) error {
-	return nil
-}
-
-func (j *jsiiProxy_PCIDSS321Checks) validateSetVerboseParameters(val *bool) error {
 	return nil
 }
 

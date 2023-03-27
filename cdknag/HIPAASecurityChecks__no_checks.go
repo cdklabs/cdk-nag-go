@@ -9,19 +9,7 @@ func (h *jsiiProxy_HIPAASecurityChecks) validateApplyRuleParameters(params IAppl
 	return nil
 }
 
-func (h *jsiiProxy_HIPAASecurityChecks) validateCreateComplianceReportLineParameters(params IApplyRule, ruleId *string, compliance interface{}) error {
-	return nil
-}
-
-func (h *jsiiProxy_HIPAASecurityChecks) validateCreateMessageParameters(ruleId *string, findingId *string, info *string, explanation *string) error {
-	return nil
-}
-
 func (h *jsiiProxy_HIPAASecurityChecks) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
-	return nil
-}
-
-func (h *jsiiProxy_HIPAASecurityChecks) validateInitializeStackReportParameters(params IApplyRule) error {
 	return nil
 }
 
@@ -29,27 +17,11 @@ func (h *jsiiProxy_HIPAASecurityChecks) validateVisitParameters(node constructs.
 	return nil
 }
 
-func (h *jsiiProxy_HIPAASecurityChecks) validateWriteToStackComplianceReportParameters(params IApplyRule, ruleId *string, compliance interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_HIPAASecurityChecks) validateSetLogIgnoresParameters(val *bool) error {
+func (j *jsiiProxy_HIPAASecurityChecks) validateSetLoggersParameters(val *[]INagLogger) error {
 	return nil
 }
 
 func (j *jsiiProxy_HIPAASecurityChecks) validateSetPackNameParameters(val *string) error {
-	return nil
-}
-
-func (j *jsiiProxy_HIPAASecurityChecks) validateSetReportsParameters(val *bool) error {
-	return nil
-}
-
-func (j *jsiiProxy_HIPAASecurityChecks) validateSetReportStacksParameters(val *[]*string) error {
-	return nil
-}
-
-func (j *jsiiProxy_HIPAASecurityChecks) validateSetVerboseParameters(val *bool) error {
 	return nil
 }
 

@@ -9,19 +9,7 @@ func (n *jsiiProxy_NIST80053R4Checks) validateApplyRuleParameters(params IApplyR
 	return nil
 }
 
-func (n *jsiiProxy_NIST80053R4Checks) validateCreateComplianceReportLineParameters(params IApplyRule, ruleId *string, compliance interface{}) error {
-	return nil
-}
-
-func (n *jsiiProxy_NIST80053R4Checks) validateCreateMessageParameters(ruleId *string, findingId *string, info *string, explanation *string) error {
-	return nil
-}
-
 func (n *jsiiProxy_NIST80053R4Checks) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
-	return nil
-}
-
-func (n *jsiiProxy_NIST80053R4Checks) validateInitializeStackReportParameters(params IApplyRule) error {
 	return nil
 }
 
@@ -29,27 +17,11 @@ func (n *jsiiProxy_NIST80053R4Checks) validateVisitParameters(node constructs.IC
 	return nil
 }
 
-func (n *jsiiProxy_NIST80053R4Checks) validateWriteToStackComplianceReportParameters(params IApplyRule, ruleId *string, compliance interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_NIST80053R4Checks) validateSetLogIgnoresParameters(val *bool) error {
+func (j *jsiiProxy_NIST80053R4Checks) validateSetLoggersParameters(val *[]INagLogger) error {
 	return nil
 }
 
 func (j *jsiiProxy_NIST80053R4Checks) validateSetPackNameParameters(val *string) error {
-	return nil
-}
-
-func (j *jsiiProxy_NIST80053R4Checks) validateSetReportsParameters(val *bool) error {
-	return nil
-}
-
-func (j *jsiiProxy_NIST80053R4Checks) validateSetReportStacksParameters(val *[]*string) error {
-	return nil
-}
-
-func (j *jsiiProxy_NIST80053R4Checks) validateSetVerboseParameters(val *bool) error {
 	return nil
 }
 

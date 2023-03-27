@@ -9,19 +9,7 @@ func (a *jsiiProxy_AwsSolutionsChecks) validateApplyRuleParameters(params IApply
 	return nil
 }
 
-func (a *jsiiProxy_AwsSolutionsChecks) validateCreateComplianceReportLineParameters(params IApplyRule, ruleId *string, compliance interface{}) error {
-	return nil
-}
-
-func (a *jsiiProxy_AwsSolutionsChecks) validateCreateMessageParameters(ruleId *string, findingId *string, info *string, explanation *string) error {
-	return nil
-}
-
 func (a *jsiiProxy_AwsSolutionsChecks) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
-	return nil
-}
-
-func (a *jsiiProxy_AwsSolutionsChecks) validateInitializeStackReportParameters(params IApplyRule) error {
 	return nil
 }
 
@@ -29,27 +17,11 @@ func (a *jsiiProxy_AwsSolutionsChecks) validateVisitParameters(node constructs.I
 	return nil
 }
 
-func (a *jsiiProxy_AwsSolutionsChecks) validateWriteToStackComplianceReportParameters(params IApplyRule, ruleId *string, compliance interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_AwsSolutionsChecks) validateSetLogIgnoresParameters(val *bool) error {
+func (j *jsiiProxy_AwsSolutionsChecks) validateSetLoggersParameters(val *[]INagLogger) error {
 	return nil
 }
 
 func (j *jsiiProxy_AwsSolutionsChecks) validateSetPackNameParameters(val *string) error {
-	return nil
-}
-
-func (j *jsiiProxy_AwsSolutionsChecks) validateSetReportsParameters(val *bool) error {
-	return nil
-}
-
-func (j *jsiiProxy_AwsSolutionsChecks) validateSetReportStacksParameters(val *[]*string) error {
-	return nil
-}
-
-func (j *jsiiProxy_AwsSolutionsChecks) validateSetVerboseParameters(val *bool) error {
 	return nil
 }
 
