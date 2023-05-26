@@ -6,7 +6,7 @@ require (
 	github.com/aws/jsii-runtime-go v1.82.0
 	github.com/aws/aws-cdk-go/awscdk/v2 v2.78.0
 	github.com/aws/constructs-go/constructs/v10 v10.0.5
-	github.com/cdklabs/awscdk-asset-awscli-go/awscliv1/v2 v2.2.183 // indirect
+	github.com/cdklabs/awscdk-asset-awscli-go/awscliv1/v2 v2.2.184 // indirect
 	github.com/cdklabs/awscdk-asset-kubectl-go/kubectlv20/v2 v2.1.1 // indirect
-	github.com/cdklabs/awscdk-asset-node-proxy-agent-go/nodeproxyagentv5/v2 v2.0.153 // indirect
+	github.com/cdklabs/awscdk-asset-node-proxy-agent-go/nodeproxyagentv5/v2 v2.0.155 // indirect
 )
