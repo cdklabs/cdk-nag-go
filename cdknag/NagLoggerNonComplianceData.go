@@ -12,6 +12,7 @@ type NagLoggerNonComplianceData struct {
 	RuleId *string `field:"required" json:"ruleId" yaml:"ruleId"`
 	RuleInfo *string `field:"required" json:"ruleInfo" yaml:"ruleInfo"`
 	RuleLevel NagMessageLevel `field:"required" json:"ruleLevel" yaml:"ruleLevel"`
+	RuleOriginalName *string `field:"required" json:"ruleOriginalName" yaml:"ruleOriginalName"`
 	FindingId *string `field:"required" json:"findingId" yaml:"findingId"`
 }
 
