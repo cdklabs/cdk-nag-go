@@ -27,7 +27,7 @@ type NIST80053R4Checks interface {
 	// Check whether a specific rule should be ignored.
 	//
 	// Returns: The reason the rule was ignored, or an empty string.
-	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string
+	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string
 	// All aspects can visit an IConstruct.
 	Visit(node constructs.IConstruct)
 }
@@ -164,7 +164,7 @@ func (n *jsiiProxy_NIST80053R4Checks) ApplyRule(params IApplyRule) {
 	)
 }
 
-func (n *jsiiProxy_NIST80053R4Checks) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string {
+func (n *jsiiProxy_NIST80053R4Checks) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string {
 	if err := n.validateIgnoreRuleParameters(suppressions, ruleId, findingId, resource, level); err != nil {
 		panic(err)
 	}
@@ -173,7 +173,7 @@ func (n *jsiiProxy_NIST80053R4Checks) IgnoreRule(suppressions *[]*NagPackSuppres
 	_jsii_.Invoke(
 		n,
 		"ignoreRule",
-		[]interface{}{suppressions, ruleId, findingId, resource, level, ignoreSuppressionCondition},
+		[]interface{}{suppressions, ruleId, findingId, resource, level, ignoreSuppressionCondition, validationFailure},
 		&returns,
 	)
 

@@ -27,7 +27,7 @@ type HIPAASecurityChecks interface {
 	// Check whether a specific rule should be ignored.
 	//
 	// Returns: The reason the rule was ignored, or an empty string.
-	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string
+	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string
 	// All aspects can visit an IConstruct.
 	Visit(node constructs.IConstruct)
 }
@@ -164,7 +164,7 @@ func (h *jsiiProxy_HIPAASecurityChecks) ApplyRule(params IApplyRule) {
 	)
 }
 
-func (h *jsiiProxy_HIPAASecurityChecks) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string {
+func (h *jsiiProxy_HIPAASecurityChecks) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string {
 	if err := h.validateIgnoreRuleParameters(suppressions, ruleId, findingId, resource, level); err != nil {
 		panic(err)
 	}
@@ -173,7 +173,7 @@ func (h *jsiiProxy_HIPAASecurityChecks) IgnoreRule(suppressions *[]*NagPackSuppr
 	_jsii_.Invoke(
 		h,
 		"ignoreRule",
-		[]interface{}{suppressions, ruleId, findingId, resource, level, ignoreSuppressionCondition},
+		[]interface{}{suppressions, ruleId, findingId, resource, level, ignoreSuppressionCondition, validationFailure},
 		&returns,
 	)
 

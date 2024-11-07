@@ -25,7 +25,7 @@ type AwsSolutionsChecks interface {
 	// Check whether a specific rule should be ignored.
 	//
 	// Returns: The reason the rule was ignored, or an empty string.
-	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string
+	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string
 	// All aspects can visit an IConstruct.
 	Visit(node constructs.IConstruct)
 }
@@ -162,7 +162,7 @@ func (a *jsiiProxy_AwsSolutionsChecks) ApplyRule(params IApplyRule) {
 	)
 }
 
-func (a *jsiiProxy_AwsSolutionsChecks) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string {
+func (a *jsiiProxy_AwsSolutionsChecks) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string {
 	if err := a.validateIgnoreRuleParameters(suppressions, ruleId, findingId, resource, level); err != nil {
 		panic(err)
 	}
@@ -171,7 +171,7 @@ func (a *jsiiProxy_AwsSolutionsChecks) IgnoreRule(suppressions *[]*NagPackSuppre
 	_jsii_.Invoke(
 		a,
 		"ignoreRule",
-		[]interface{}{suppressions, ruleId, findingId, resource, level, ignoreSuppressionCondition},
+		[]interface{}{suppressions, ruleId, findingId, resource, level, ignoreSuppressionCondition, validationFailure},
 		&returns,
 	)
 

@@ -25,7 +25,7 @@ type PCIDSS321Checks interface {
 	// Check whether a specific rule should be ignored.
 	//
 	// Returns: The reason the rule was ignored, or an empty string.
-	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string
+	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string
 	// All aspects can visit an IConstruct.
 	Visit(node constructs.IConstruct)
 }
@@ -162,7 +162,7 @@ func (p *jsiiProxy_PCIDSS321Checks) ApplyRule(params IApplyRule) {
 	)
 }
 
-func (p *jsiiProxy_PCIDSS321Checks) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore) *string {
+func (p *jsiiProxy_PCIDSS321Checks) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string {
 	if err := p.validateIgnoreRuleParameters(suppressions, ruleId, findingId, resource, level); err != nil {
 		panic(err)
 	}
@@ -171,7 +171,7 @@ func (p *jsiiProxy_PCIDSS321Checks) IgnoreRule(suppressions *[]*NagPackSuppressi
 	_jsii_.Invoke(
 		p,
 		"ignoreRule",
-		[]interface{}{suppressions, ruleId, findingId, resource, level, ignoreSuppressionCondition},
+		[]interface{}{suppressions, ruleId, findingId, resource, level, ignoreSuppressionCondition, validationFailure},
 		&returns,
 	)
 
