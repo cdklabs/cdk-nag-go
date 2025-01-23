@@ -6,7 +6,7 @@ import (
 	"github.com/aws/aws-cdk-go/awscdk/v2"
 )
 
-// Interface for JSII interoperability for passing parameters and the Rule Callback to @applyRule method.
+// Interface for JSII interoperability for passing parameters and the Rule Callback to.
 type IApplyRule interface {
 	// The callback to the rule.
 	Rule(node awscdk.CfnResource) interface{}
