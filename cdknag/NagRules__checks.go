@@ -32,3 +32,15 @@ func validateNagRules_ResolveResourceFromInstrinsicParameters(node awscdk.CfnRes
 	return nil
 }
 
+func validateNagRules_ResolveResourceFromIntrinsicParameters(node awscdk.CfnResource, parameter interface{}) error {
+	if node == nil {
+		return fmt.Errorf("parameter node is required, but nil was provided")
+	}
+
+	if parameter == nil {
+		return fmt.Errorf("parameter parameter is required, but nil was provided")
+	}
+
+	return nil
+}
+

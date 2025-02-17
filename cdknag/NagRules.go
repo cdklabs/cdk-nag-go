@@ -63,9 +63,10 @@ func NagRules_ResolveIfPrimitive(node awscdk.CfnResource, parameter interface{})
 	return returns
 }
 
-// Use in cases where a token resolves to an intrinsic function and the referenced resource must be known to pass a rule.
-//
 // Returns: Return the Logical resource Id if resolves to a intrinsic function, otherwise the resolved provided value.
+// Deprecated: Use resolveResourceFromIntrinsic instead
+//
+// Use in cases where a token resolves to an intrinsic function and the referenced resource must be known to pass a rule.
 func NagRules_ResolveResourceFromInstrinsic(node awscdk.CfnResource, parameter interface{}) interface{} {
 	_init_.Initialize()
 
@@ -77,6 +78,27 @@ func NagRules_ResolveResourceFromInstrinsic(node awscdk.CfnResource, parameter i
 	_jsii_.StaticInvoke(
 		"cdk-nag.NagRules",
 		"resolveResourceFromInstrinsic",
+		[]interface{}{node, parameter},
+		&returns,
+	)
+
+	return returns
+}
+
+// Use in cases where a token resolves to an intrinsic function and the referenced resource must be known to pass a rule.
+//
+// Returns: Return the Logical resource Id if resolves to a intrinsic function, otherwise the resolved provided value.
+func NagRules_ResolveResourceFromIntrinsic(node awscdk.CfnResource, parameter interface{}) interface{} {
+	_init_.Initialize()
+
+	if err := validateNagRules_ResolveResourceFromIntrinsicParameters(node, parameter); err != nil {
+		panic(err)
+	}
+	var returns interface{}
+
+	_jsii_.StaticInvoke(
+		"cdk-nag.NagRules",
+		"resolveResourceFromIntrinsic",
 		[]interface{}{node, parameter},
 		&returns,
 	)

@@ -12,3 +12,7 @@ func validateNagRules_ResolveResourceFromInstrinsicParameters(node awscdk.CfnRes
 	return nil
 }
 
+func validateNagRules_ResolveResourceFromIntrinsicParameters(node awscdk.CfnResource, parameter interface{}) error {
+	return nil
+}
+
