@@ -311,6 +311,25 @@ func init() {
 		reflect.TypeOf((*RegexAppliesTo)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
+		"cdk-nag.ServerlessChecks",
+		reflect.TypeOf((*ServerlessChecks)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
+			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
+			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
+			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
+			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
+			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
+			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
+			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ServerlessChecks{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_NagPack)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
 		"cdk-nag.SuppressionIgnoreAlways",
 		reflect.TypeOf((*SuppressionIgnoreAlways)(nil)).Elem(),
 		[]_jsii_.Member{
