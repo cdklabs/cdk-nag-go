@@ -184,6 +184,7 @@ func init() {
 		map[string]interface{}{
 			"WARN": NagMessageLevel_WARN,
 			"ERROR": NagMessageLevel_ERROR,
+			"INFO": NagMessageLevel_INFO,
 		},
 	)
 	_jsii_.RegisterClass(

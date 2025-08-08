@@ -7,5 +7,6 @@ type NagMessageLevel string
 const (
 	NagMessageLevel_WARN NagMessageLevel = "WARN"
 	NagMessageLevel_ERROR NagMessageLevel = "ERROR"
+	NagMessageLevel_INFO NagMessageLevel = "INFO"
 )
 
