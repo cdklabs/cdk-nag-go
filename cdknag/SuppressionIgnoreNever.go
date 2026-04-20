@@ -8,7 +8,7 @@ import (
 // Don't ignore the suppression.
 type SuppressionIgnoreNever interface {
 	INagSuppressionIgnore
-	CreateMessage(_input *SuppressionIgnoreInput) *string
+	CreateMessage(input *SuppressionIgnoreInput) *string
 }
 
 // The jsii proxy struct for SuppressionIgnoreNever
@@ -40,8 +40,8 @@ func NewSuppressionIgnoreNever_Override(s SuppressionIgnoreNever) {
 	)
 }
 
-func (s *jsiiProxy_SuppressionIgnoreNever) CreateMessage(_input *SuppressionIgnoreInput) *string {
-	if err := s.validateCreateMessageParameters(_input); err != nil {
+func (s *jsiiProxy_SuppressionIgnoreNever) CreateMessage(input *SuppressionIgnoreInput) *string {
+	if err := s.validateCreateMessageParameters(input); err != nil {
 		panic(err)
 	}
 	var returns *string
@@ -49,7 +49,7 @@ func (s *jsiiProxy_SuppressionIgnoreNever) CreateMessage(_input *SuppressionIgno
 	_jsii_.Invoke(
 		s,
 		"createMessage",
-		[]interface{}{_input},
+		[]interface{}{input},
 		&returns,
 	)
 

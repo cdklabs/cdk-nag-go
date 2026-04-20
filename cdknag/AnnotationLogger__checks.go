@@ -32,11 +32,11 @@ func (a *jsiiProxy_AnnotationLogger) validateCreateMessageParameters(ruleId *str
 	return nil
 }
 
-func (a *jsiiProxy_AnnotationLogger) validateOnComplianceParameters(_data *NagLoggerComplianceData) error {
-	if _data == nil {
-		return fmt.Errorf("parameter _data is required, but nil was provided")
+func (a *jsiiProxy_AnnotationLogger) validateOnComplianceParameters(data *NagLoggerComplianceData) error {
+	if data == nil {
+		return fmt.Errorf("parameter data is required, but nil was provided")
 	}
-	if err := _jsii_.ValidateStruct(_data, func() string { return "parameter _data" }); err != nil {
+	if err := _jsii_.ValidateStruct(data, func() string { return "parameter data" }); err != nil {
 		return err
 	}
 
@@ -65,11 +65,11 @@ func (a *jsiiProxy_AnnotationLogger) validateOnNonComplianceParameters(data *Nag
 	return nil
 }
 
-func (a *jsiiProxy_AnnotationLogger) validateOnNotApplicableParameters(_data *NagLoggerNotApplicableData) error {
-	if _data == nil {
-		return fmt.Errorf("parameter _data is required, but nil was provided")
+func (a *jsiiProxy_AnnotationLogger) validateOnNotApplicableParameters(data *NagLoggerNotApplicableData) error {
+	if data == nil {
+		return fmt.Errorf("parameter data is required, but nil was provided")
 	}
-	if err := _jsii_.ValidateStruct(_data, func() string { return "parameter _data" }); err != nil {
+	if err := _jsii_.ValidateStruct(data, func() string { return "parameter data" }); err != nil {
 		return err
 	}
 

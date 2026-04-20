@@ -4,7 +4,7 @@ package cdknag
 
 // Building without runtime type checking enabled, so all the below just return nil
 
-func (s *jsiiProxy_SuppressionIgnoreAlways) validateCreateMessageParameters(_input *SuppressionIgnoreInput) error {
+func (s *jsiiProxy_SuppressionIgnoreAlways) validateCreateMessageParameters(input *SuppressionIgnoreInput) error {
 	return nil
 }
 

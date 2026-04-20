@@ -8,7 +8,7 @@ func (a *jsiiProxy_AnnotationLogger) validateCreateMessageParameters(ruleId *str
 	return nil
 }
 
-func (a *jsiiProxy_AnnotationLogger) validateOnComplianceParameters(_data *NagLoggerComplianceData) error {
+func (a *jsiiProxy_AnnotationLogger) validateOnComplianceParameters(data *NagLoggerComplianceData) error {
 	return nil
 }
 
@@ -20,7 +20,7 @@ func (a *jsiiProxy_AnnotationLogger) validateOnNonComplianceParameters(data *Nag
 	return nil
 }
 
-func (a *jsiiProxy_AnnotationLogger) validateOnNotApplicableParameters(_data *NagLoggerNotApplicableData) error {
+func (a *jsiiProxy_AnnotationLogger) validateOnNotApplicableParameters(data *NagLoggerNotApplicableData) error {
 	return nil
 }
 

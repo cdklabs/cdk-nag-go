@@ -14,13 +14,13 @@ type AnnotationLogger interface {
 	Verbose() *bool
 	CreateMessage(ruleId *string, findingId *string, ruleInfo *string, ruleExplanation *string, verbose *bool) *string
 	// Called when a CfnResource passes the compliance check for a given rule.
-	OnCompliance(_data *NagLoggerComplianceData)
+	OnCompliance(data *NagLoggerComplianceData)
 	// Called when a rule throws an error during while validating a CfnResource for compliance.
 	OnError(data *NagLoggerErrorData)
 	// Called when a CfnResource does not pass the compliance check for a given rule and the the rule violation is not suppressed by the user.
 	OnNonCompliance(data *NagLoggerNonComplianceData)
 	// Called when a rule does not apply to the given CfnResource.
-	OnNotApplicable(_data *NagLoggerNotApplicableData)
+	OnNotApplicable(data *NagLoggerNotApplicableData)
 	// Called when a CfnResource does not pass the compliance check for a given rule and the rule violation is suppressed by the user.
 	OnSuppressed(data *NagLoggerSuppressedData)
 	// Called when a rule throws an error during while validating a CfnResource for compliance and the error is suppressed.
@@ -117,14 +117,14 @@ func (a *jsiiProxy_AnnotationLogger) CreateMessage(ruleId *string, findingId *st
 	return returns
 }
 
-func (a *jsiiProxy_AnnotationLogger) OnCompliance(_data *NagLoggerComplianceData) {
-	if err := a.validateOnComplianceParameters(_data); err != nil {
+func (a *jsiiProxy_AnnotationLogger) OnCompliance(data *NagLoggerComplianceData) {
+	if err := a.validateOnComplianceParameters(data); err != nil {
 		panic(err)
 	}
 	_jsii_.InvokeVoid(
 		a,
 		"onCompliance",
-		[]interface{}{_data},
+		[]interface{}{data},
 	)
 }
 
@@ -150,14 +150,14 @@ func (a *jsiiProxy_AnnotationLogger) OnNonCompliance(data *NagLoggerNonComplianc
 	)
 }
 
-func (a *jsiiProxy_AnnotationLogger) OnNotApplicable(_data *NagLoggerNotApplicableData) {
-	if err := a.validateOnNotApplicableParameters(_data); err != nil {
+func (a *jsiiProxy_AnnotationLogger) OnNotApplicable(data *NagLoggerNotApplicableData) {
+	if err := a.validateOnNotApplicableParameters(data); err != nil {
 		panic(err)
 	}
 	_jsii_.InvokeVoid(
 		a,
 		"onNotApplicable",
-		[]interface{}{_data},
+		[]interface{}{data},
 	)
 }
 
