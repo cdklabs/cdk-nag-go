@@ -6,8 +6,10 @@ import (
 )
 
 // Ignore Suppressions for Rules with a NagMessageLevel.ERROR.
+// Experimental.
 type SuppressionIgnoreErrors interface {
 	INagSuppressionIgnore
+	// Experimental.
 	CreateMessage(input *SuppressionIgnoreInput) *string
 }
 
@@ -16,6 +18,7 @@ type jsiiProxy_SuppressionIgnoreErrors struct {
 	jsiiProxy_INagSuppressionIgnore
 }
 
+// Experimental.
 func NewSuppressionIgnoreErrors() SuppressionIgnoreErrors {
 	_init_.Initialize()
 
@@ -30,6 +33,7 @@ func NewSuppressionIgnoreErrors() SuppressionIgnoreErrors {
 	return &j
 }
 
+// Experimental.
 func NewSuppressionIgnoreErrors_Override(s SuppressionIgnoreErrors) {
 	_init_.Initialize()
 

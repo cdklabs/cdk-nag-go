@@ -2,10 +2,13 @@ package cdknag
 
 
 // Additional states a rule can be in post compliance validation.
+// Experimental.
 type NagRulePostValidationStates string
 
 const (
+	// Experimental.
 	NagRulePostValidationStates_SUPPRESSED NagRulePostValidationStates = "SUPPRESSED"
+	// Experimental.
 	NagRulePostValidationStates_UNKNOWN NagRulePostValidationStates = "UNKNOWN"
 )
 

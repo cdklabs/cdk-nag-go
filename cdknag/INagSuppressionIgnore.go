@@ -5,7 +5,9 @@ import (
 )
 
 // Interface for creating NagSuppression Ignores.
+// Experimental.
 type INagSuppressionIgnore interface {
+	// Experimental.
 	CreateMessage(input *SuppressionIgnoreInput) *string
 }
 

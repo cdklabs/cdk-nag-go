@@ -8,6 +8,7 @@ import (
 )
 
 // Helper class with methods for rule creation.
+// Experimental.
 type NagRules interface {
 }
 
@@ -16,6 +17,7 @@ type jsiiProxy_NagRules struct {
 	_ byte // padding
 }
 
+// Experimental.
 func NewNagRules() NagRules {
 	_init_.Initialize()
 
@@ -30,6 +32,7 @@ func NewNagRules() NagRules {
 	return &j
 }
 
+// Experimental.
 func NewNagRules_Override(n NagRules) {
 	_init_.Initialize()
 
@@ -45,6 +48,7 @@ func NewNagRules_Override(n NagRules) {
 // https://developer.mozilla.org/en-US/docs/Glossary/Primitive
 //
 // Returns: Return a value if resolves to a primitive data type, otherwise throw an error.
+// Experimental.
 func NagRules_ResolveIfPrimitive(node awscdk.CfnResource, parameter interface{}) interface{} {
 	_init_.Initialize()
 
@@ -88,6 +92,7 @@ func NagRules_ResolveResourceFromInstrinsic(node awscdk.CfnResource, parameter i
 // Use in cases where a token resolves to an intrinsic function and the referenced resource must be known to pass a rule.
 //
 // Returns: Return the Logical resource Id if resolves to a intrinsic function, otherwise the resolved provided value.
+// Experimental.
 func NagRules_ResolveResourceFromIntrinsic(node awscdk.CfnResource, parameter interface{}) interface{} {
 	_init_.Initialize()
 

@@ -8,6 +8,7 @@ import (
 )
 
 // Helper class with methods to add cdk-nag suppressions to cdk resources.
+// Experimental.
 type NagSuppressions interface {
 }
 
@@ -16,6 +17,7 @@ type jsiiProxy_NagSuppressions struct {
 	_ byte // padding
 }
 
+// Experimental.
 func NewNagSuppressions() NagSuppressions {
 	_init_.Initialize()
 
@@ -30,6 +32,7 @@ func NewNagSuppressions() NagSuppressions {
 	return &j
 }
 
+// Experimental.
 func NewNagSuppressions_Override(n NagSuppressions) {
 	_init_.Initialize()
 
@@ -41,6 +44,7 @@ func NewNagSuppressions_Override(n NagSuppressions) {
 }
 
 // Add cdk-nag suppressions to a CfnResource and optionally its children.
+// Experimental.
 func NagSuppressions_AddResourceSuppressions(construct interface{}, suppressions *[]*NagPackSuppression, applyToChildren *bool) {
 	_init_.Initialize()
 
@@ -55,6 +59,7 @@ func NagSuppressions_AddResourceSuppressions(construct interface{}, suppressions
 }
 
 // Add cdk-nag suppressions to a CfnResource and optionally its children via its path.
+// Experimental.
 func NagSuppressions_AddResourceSuppressionsByPath(stack awscdk.Stack, path interface{}, suppressions *[]*NagPackSuppression, applyToChildren *bool) {
 	_init_.Initialize()
 
@@ -69,6 +74,7 @@ func NagSuppressions_AddResourceSuppressionsByPath(stack awscdk.Stack, path inte
 }
 
 // Apply cdk-nag suppressions to a Stack and optionally nested stacks.
+// Experimental.
 func NagSuppressions_AddStackSuppressions(stack awscdk.Stack, suppressions *[]*NagPackSuppression, applyToNestedStacks *bool) {
 	_init_.Initialize()
 

@@ -10,24 +10,37 @@ import (
 )
 
 // Base class for all rule packs.
+// Experimental.
 type NagPack interface {
 	awscdk.IAspect
+	// Experimental.
 	Loggers() *[]INagLogger
+	// Experimental.
 	SetLoggers(val *[]INagLogger)
+	// Experimental.
 	PackGlobalSuppressionIgnore() INagSuppressionIgnore
+	// Experimental.
 	SetPackGlobalSuppressionIgnore(val INagSuppressionIgnore)
+	// Experimental.
 	PackName() *string
+	// Experimental.
 	SetPackName(val *string)
+	// Experimental.
 	ReadPackName() *string
+	// Experimental.
 	UserGlobalSuppressionIgnore() INagSuppressionIgnore
+	// Experimental.
 	SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore)
 	// Create a rule to be used in the NagPack.
+	// Experimental.
 	ApplyRule(params IApplyRule)
 	// Check whether a specific rule should be ignored.
 	//
 	// Returns: The reason the rule was ignored, or an empty string.
+	// Experimental.
 	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string
 	// All aspects can visit an IConstruct.
+	// Experimental.
 	Visit(node constructs.IConstruct)
 }
 
@@ -87,6 +100,7 @@ func (j *jsiiProxy_NagPack) UserGlobalSuppressionIgnore() INagSuppressionIgnore 
 }
 
 
+// Experimental.
 func NewNagPack_Override(n NagPack, props *NagPackProps) {
 	_init_.Initialize()
 

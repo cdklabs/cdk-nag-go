@@ -11,24 +11,37 @@ import (
 // Check for NIST 800-53 rev 5 compliance.
 //
 // Based on the NIST 800-53 rev 5 AWS operational best practices: https://docs.aws.amazon.com/config/latest/developerguide/operational-best-practices-for-nist-800-53_rev_5.html
+// Experimental.
 type NIST80053R5Checks interface {
 	NagPack
+	// Experimental.
 	Loggers() *[]INagLogger
+	// Experimental.
 	SetLoggers(val *[]INagLogger)
+	// Experimental.
 	PackGlobalSuppressionIgnore() INagSuppressionIgnore
+	// Experimental.
 	SetPackGlobalSuppressionIgnore(val INagSuppressionIgnore)
+	// Experimental.
 	PackName() *string
+	// Experimental.
 	SetPackName(val *string)
+	// Experimental.
 	ReadPackName() *string
+	// Experimental.
 	UserGlobalSuppressionIgnore() INagSuppressionIgnore
+	// Experimental.
 	SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore)
 	// Create a rule to be used in the NagPack.
+	// Experimental.
 	ApplyRule(params IApplyRule)
 	// Check whether a specific rule should be ignored.
 	//
 	// Returns: The reason the rule was ignored, or an empty string.
+	// Experimental.
 	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string
 	// All aspects can visit an IConstruct.
+	// Experimental.
 	Visit(node constructs.IConstruct)
 }
 
@@ -88,6 +101,7 @@ func (j *jsiiProxy_NIST80053R5Checks) UserGlobalSuppressionIgnore() INagSuppress
 }
 
 
+// Experimental.
 func NewNIST80053R5Checks(props *NagPackProps) NIST80053R5Checks {
 	_init_.Initialize()
 
@@ -105,6 +119,7 @@ func NewNIST80053R5Checks(props *NagPackProps) NIST80053R5Checks {
 	return &j
 }
 
+// Experimental.
 func NewNIST80053R5Checks_Override(n NIST80053R5Checks, props *NagPackProps) {
 	_init_.Initialize()
 

@@ -6,24 +6,35 @@ import (
 )
 
 // A NagLogger that creates compliance reports.
+// Experimental.
 type NagReportLogger interface {
 	INagLogger
+	// Experimental.
 	Formats() *[]NagReportFormat
+	// Experimental.
 	GetFormatStacks(format NagReportFormat) *[]*string
 	// Initialize the report for the rule pack's compliance report for the resource's Stack if it doesn't exist.
+	// Experimental.
 	InitializeStackReport(data *NagLoggerBaseData)
 	// Called when a CfnResource passes the compliance check for a given rule.
+	// Experimental.
 	OnCompliance(data *NagLoggerComplianceData)
 	// Called when a rule throws an error during while validating a CfnResource for compliance.
+	// Experimental.
 	OnError(data *NagLoggerErrorData)
 	// Called when a CfnResource does not pass the compliance check for a given rule and the the rule violation is not suppressed by the user.
+	// Experimental.
 	OnNonCompliance(data *NagLoggerNonComplianceData)
 	// Called when a rule does not apply to the given CfnResource.
+	// Experimental.
 	OnNotApplicable(data *NagLoggerNotApplicableData)
 	// Called when a CfnResource does not pass the compliance check for a given rule and the rule violation is suppressed by the user.
+	// Experimental.
 	OnSuppressed(data *NagLoggerSuppressedData)
 	// Called when a rule throws an error during while validating a CfnResource for compliance and the error is suppressed.
+	// Experimental.
 	OnSuppressedError(data *NagLoggerSuppressedErrorData)
+	// Experimental.
 	WriteToStackComplianceReport(data *NagLoggerBaseData, compliance interface{})
 }
 
@@ -43,6 +54,7 @@ func (j *jsiiProxy_NagReportLogger) Formats() *[]NagReportFormat {
 }
 
 
+// Experimental.
 func NewNagReportLogger(props *NagReportLoggerProps) NagReportLogger {
 	_init_.Initialize()
 
@@ -60,6 +72,7 @@ func NewNagReportLogger(props *NagReportLoggerProps) NagReportLogger {
 	return &j
 }
 
+// Experimental.
 func NewNagReportLogger_Override(n NagReportLogger, props *NagReportLoggerProps) {
 	_init_.Initialize()
 

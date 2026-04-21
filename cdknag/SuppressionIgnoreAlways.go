@@ -6,8 +6,10 @@ import (
 )
 
 // Always ignore the suppression.
+// Experimental.
 type SuppressionIgnoreAlways interface {
 	INagSuppressionIgnore
+	// Experimental.
 	CreateMessage(input *SuppressionIgnoreInput) *string
 }
 
@@ -16,6 +18,7 @@ type jsiiProxy_SuppressionIgnoreAlways struct {
 	jsiiProxy_INagSuppressionIgnore
 }
 
+// Experimental.
 func NewSuppressionIgnoreAlways(triggerMessage *string) SuppressionIgnoreAlways {
 	_init_.Initialize()
 
@@ -33,6 +36,7 @@ func NewSuppressionIgnoreAlways(triggerMessage *string) SuppressionIgnoreAlways 
 	return &j
 }
 
+// Experimental.
 func NewSuppressionIgnoreAlways_Override(s SuppressionIgnoreAlways, triggerMessage *string) {
 	_init_.Initialize()
 

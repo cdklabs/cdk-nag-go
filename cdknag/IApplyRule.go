@@ -7,26 +7,40 @@ import (
 )
 
 // Interface for JSII interoperability for passing parameters and the Rule Callback to.
+// Experimental.
 type IApplyRule interface {
 	// The callback to the rule.
+	// Experimental.
 	Rule(node awscdk.CfnResource) interface{}
 	// Why the rule exists.
+	// Experimental.
 	Explanation() *string
+	// Experimental.
 	SetExplanation(e *string)
 	// A condition in which a suppression should be ignored.
+	// Experimental.
 	IgnoreSuppressionCondition() INagSuppressionIgnore
+	// Experimental.
 	SetIgnoreSuppressionCondition(i INagSuppressionIgnore)
 	// Why the rule was triggered.
+	// Experimental.
 	Info() *string
+	// Experimental.
 	SetInfo(i *string)
 	// The annotations message level to apply to the rule if triggered.
+	// Experimental.
 	Level() NagMessageLevel
+	// Experimental.
 	SetLevel(l NagMessageLevel)
 	// The CfnResource to check.
+	// Experimental.
 	Node() awscdk.CfnResource
+	// Experimental.
 	SetNode(n awscdk.CfnResource)
 	// Override for the suffix of the Rule ID for this rule.
+	// Experimental.
 	RuleSuffixOverride() *string
+	// Experimental.
 	SetRuleSuffixOverride(r *string)
 }
 

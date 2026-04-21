@@ -6,8 +6,10 @@ import (
 )
 
 // Ignore the suppression if any of the given INagSuppressionIgnore return a non-empty message.
+// Experimental.
 type SuppressionIgnoreOr interface {
 	INagSuppressionIgnore
+	// Experimental.
 	CreateMessage(input *SuppressionIgnoreInput) *string
 }
 
@@ -16,6 +18,7 @@ type jsiiProxy_SuppressionIgnoreOr struct {
 	jsiiProxy_INagSuppressionIgnore
 }
 
+// Experimental.
 func NewSuppressionIgnoreOr(orSuppressionIgnores ...INagSuppressionIgnore) SuppressionIgnoreOr {
 	_init_.Initialize()
 
@@ -35,6 +38,7 @@ func NewSuppressionIgnoreOr(orSuppressionIgnores ...INagSuppressionIgnore) Suppr
 	return &j
 }
 
+// Experimental.
 func NewSuppressionIgnoreOr_Override(s SuppressionIgnoreOr, orSuppressionIgnores ...INagSuppressionIgnore) {
 	_init_.Initialize()
 

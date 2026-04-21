@@ -9,24 +9,37 @@ import (
 )
 
 // Check Best practices based on AWS Solutions Security Matrix.
+// Experimental.
 type AwsSolutionsChecks interface {
 	NagPack
+	// Experimental.
 	Loggers() *[]INagLogger
+	// Experimental.
 	SetLoggers(val *[]INagLogger)
+	// Experimental.
 	PackGlobalSuppressionIgnore() INagSuppressionIgnore
+	// Experimental.
 	SetPackGlobalSuppressionIgnore(val INagSuppressionIgnore)
+	// Experimental.
 	PackName() *string
+	// Experimental.
 	SetPackName(val *string)
+	// Experimental.
 	ReadPackName() *string
+	// Experimental.
 	UserGlobalSuppressionIgnore() INagSuppressionIgnore
+	// Experimental.
 	SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore)
 	// Create a rule to be used in the NagPack.
+	// Experimental.
 	ApplyRule(params IApplyRule)
 	// Check whether a specific rule should be ignored.
 	//
 	// Returns: The reason the rule was ignored, or an empty string.
+	// Experimental.
 	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string
 	// All aspects can visit an IConstruct.
+	// Experimental.
 	Visit(node constructs.IConstruct)
 }
 
@@ -86,6 +99,7 @@ func (j *jsiiProxy_AwsSolutionsChecks) UserGlobalSuppressionIgnore() INagSuppres
 }
 
 
+// Experimental.
 func NewAwsSolutionsChecks(props *NagPackProps) AwsSolutionsChecks {
 	_init_.Initialize()
 
@@ -103,6 +117,7 @@ func NewAwsSolutionsChecks(props *NagPackProps) AwsSolutionsChecks {
 	return &j
 }
 
+// Experimental.
 func NewAwsSolutionsChecks_Override(a AwsSolutionsChecks, props *NagPackProps) {
 	_init_.Initialize()
 
