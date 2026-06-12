@@ -19,36 +19,7 @@ func (n *jsiiProxy_NagPack) validateApplyRuleParameters(params IApplyRule) error
 	return nil
 }
 
-func (n *jsiiProxy_NagPack) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
-	if suppressions == nil {
-		return fmt.Errorf("parameter suppressions is required, but nil was provided")
-	}
-	for idx_1cb3ae, v := range *suppressions {
-		if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter suppressions[%#v]", idx_1cb3ae) }); err != nil {
-			return err
-		}
-	}
-
-	if ruleId == nil {
-		return fmt.Errorf("parameter ruleId is required, but nil was provided")
-	}
-
-	if findingId == nil {
-		return fmt.Errorf("parameter findingId is required, but nil was provided")
-	}
-
-	if resource == nil {
-		return fmt.Errorf("parameter resource is required, but nil was provided")
-	}
-
-	if level == "" {
-		return fmt.Errorf("parameter level is required, but nil was provided")
-	}
-
-	return nil
-}
-
-func (n *jsiiProxy_NagPack) validateVisitParameters(node constructs.IConstruct) error {
+func (n *jsiiProxy_NagPack) validateCheckResourceParameters(node awscdk.CfnResource) error {
 	if node == nil {
 		return fmt.Errorf("parameter node is required, but nil was provided")
 	}
@@ -56,9 +27,17 @@ func (n *jsiiProxy_NagPack) validateVisitParameters(node constructs.IConstruct) 
 	return nil
 }
 
-func (j *jsiiProxy_NagPack) validateSetLoggersParameters(val *[]INagLogger) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
+func (n *jsiiProxy_NagPack) validateValidateParameters(context awscdk.IPolicyValidationContext) error {
+	if context == nil {
+		return fmt.Errorf("parameter context is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (n *jsiiProxy_NagPack) validateValidateScopeParameters(scope constructs.IConstruct) error {
+	if scope == nil {
+		return fmt.Errorf("parameter scope is required, but nil was provided")
 	}
 
 	return nil

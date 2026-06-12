@@ -8,15 +8,15 @@ func (h *jsiiProxy_HIPAASecurityChecks) validateApplyRuleParameters(params IAppl
 	return nil
 }
 
-func (h *jsiiProxy_HIPAASecurityChecks) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
+func (h *jsiiProxy_HIPAASecurityChecks) validateCheckResourceParameters(node awscdk.CfnResource) error {
 	return nil
 }
 
-func (h *jsiiProxy_HIPAASecurityChecks) validateVisitParameters(node constructs.IConstruct) error {
+func (h *jsiiProxy_HIPAASecurityChecks) validateValidateParameters(context awscdk.IPolicyValidationContext) error {
 	return nil
 }
 
-func (j *jsiiProxy_HIPAASecurityChecks) validateSetLoggersParameters(val *[]INagLogger) error {
+func (h *jsiiProxy_HIPAASecurityChecks) validateValidateScopeParameters(scope constructs.IConstruct) error {
 	return nil
 }
 

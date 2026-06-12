@@ -9,42 +9,18 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"cdk-nag.AnnotationLogger",
-		reflect.TypeOf((*AnnotationLogger)(nil)).Elem(),
-		[]_jsii_.Member{
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
-			_jsii_.MemberProperty{JsiiProperty: "logIgnores", GoGetter: "LogIgnores"},
-			_jsii_.MemberMethod{JsiiMethod: "onCompliance", GoMethod: "OnCompliance"},
-			_jsii_.MemberMethod{JsiiMethod: "onError", GoMethod: "OnError"},
-			_jsii_.MemberMethod{JsiiMethod: "onNonCompliance", GoMethod: "OnNonCompliance"},
-			_jsii_.MemberMethod{JsiiMethod: "onNotApplicable", GoMethod: "OnNotApplicable"},
-			_jsii_.MemberMethod{JsiiMethod: "onSuppressed", GoMethod: "OnSuppressed"},
-			_jsii_.MemberMethod{JsiiMethod: "onSuppressedError", GoMethod: "OnSuppressedError"},
-			_jsii_.MemberProperty{JsiiProperty: "suppressionId", GoGetter: "SuppressionId"},
-			_jsii_.MemberProperty{JsiiProperty: "verbose", GoGetter: "Verbose"},
-		},
-		func() interface{} {
-			j := jsiiProxy_AnnotationLogger{}
-			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagLogger)
-			return &j
-		},
-	)
-	_jsii_.RegisterStruct(
-		"cdk-nag.AnnotationLoggerProps",
-		reflect.TypeOf((*AnnotationLoggerProps)(nil)).Elem(),
-	)
-	_jsii_.RegisterClass(
 		"cdk-nag.AwsSolutionsChecks",
 		reflect.TypeOf((*AwsSolutionsChecks)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
-			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
+			_jsii_.MemberMethod{JsiiMethod: "checkResource", GoMethod: "CheckResource"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
+			_jsii_.MemberProperty{JsiiProperty: "ruleIds", GoGetter: "RuleIds"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateScope", GoMethod: "ValidateScope"},
+			_jsii_.MemberProperty{JsiiProperty: "version", GoGetter: "Version"},
 		},
 		func() interface{} {
 			j := jsiiProxy_AwsSolutionsChecks{}
@@ -57,13 +33,14 @@ func init() {
 		reflect.TypeOf((*HIPAASecurityChecks)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
-			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
+			_jsii_.MemberMethod{JsiiMethod: "checkResource", GoMethod: "CheckResource"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
+			_jsii_.MemberProperty{JsiiProperty: "ruleIds", GoGetter: "RuleIds"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateScope", GoMethod: "ValidateScope"},
+			_jsii_.MemberProperty{JsiiProperty: "version", GoGetter: "Version"},
 		},
 		func() interface{} {
 			j := jsiiProxy_HIPAASecurityChecks{}
@@ -76,7 +53,6 @@ func init() {
 		reflect.TypeOf((*IApplyRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "explanation", GoGetter: "Explanation"},
-			_jsii_.MemberProperty{JsiiProperty: "ignoreSuppressionCondition", GoGetter: "IgnoreSuppressionCondition"},
 			_jsii_.MemberProperty{JsiiProperty: "info", GoGetter: "Info"},
 			_jsii_.MemberProperty{JsiiProperty: "level", GoGetter: "Level"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -88,28 +64,16 @@ func init() {
 		},
 	)
 	_jsii_.RegisterInterface(
-		"cdk-nag.INagLogger",
-		reflect.TypeOf((*INagLogger)(nil)).Elem(),
+		"cdk-nag.INagValidationContext",
+		reflect.TypeOf((*INagValidationContext)(nil)).Elem(),
 		[]_jsii_.Member{
-			_jsii_.MemberMethod{JsiiMethod: "onCompliance", GoMethod: "OnCompliance"},
-			_jsii_.MemberMethod{JsiiMethod: "onError", GoMethod: "OnError"},
-			_jsii_.MemberMethod{JsiiMethod: "onNonCompliance", GoMethod: "OnNonCompliance"},
-			_jsii_.MemberMethod{JsiiMethod: "onNotApplicable", GoMethod: "OnNotApplicable"},
-			_jsii_.MemberMethod{JsiiMethod: "onSuppressed", GoMethod: "OnSuppressed"},
-			_jsii_.MemberMethod{JsiiMethod: "onSuppressedError", GoMethod: "OnSuppressedError"},
+			_jsii_.MemberProperty{JsiiProperty: "appConstruct", GoGetter: "AppConstruct"},
+			_jsii_.MemberProperty{JsiiProperty: "templatePaths", GoGetter: "TemplatePaths"},
 		},
 		func() interface{} {
-			return &jsiiProxy_INagLogger{}
-		},
-	)
-	_jsii_.RegisterInterface(
-		"cdk-nag.INagSuppressionIgnore",
-		reflect.TypeOf((*INagSuppressionIgnore)(nil)).Elem(),
-		[]_jsii_.Member{
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
-		},
-		func() interface{} {
-			return &jsiiProxy_INagSuppressionIgnore{}
+			j := jsiiProxy_INagValidationContext{}
+			_jsii_.InitJsiiProxy(&j.Type__awscdkIPolicyValidationContext)
+			return &j
 		},
 	)
 	_jsii_.RegisterClass(
@@ -117,13 +81,14 @@ func init() {
 		reflect.TypeOf((*NIST80053R4Checks)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
-			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
+			_jsii_.MemberMethod{JsiiMethod: "checkResource", GoMethod: "CheckResource"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
+			_jsii_.MemberProperty{JsiiProperty: "ruleIds", GoGetter: "RuleIds"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateScope", GoMethod: "ValidateScope"},
+			_jsii_.MemberProperty{JsiiProperty: "version", GoGetter: "Version"},
 		},
 		func() interface{} {
 			j := jsiiProxy_NIST80053R4Checks{}
@@ -136,47 +101,20 @@ func init() {
 		reflect.TypeOf((*NIST80053R5Checks)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
-			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
+			_jsii_.MemberMethod{JsiiMethod: "checkResource", GoMethod: "CheckResource"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
+			_jsii_.MemberProperty{JsiiProperty: "ruleIds", GoGetter: "RuleIds"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateScope", GoMethod: "ValidateScope"},
+			_jsii_.MemberProperty{JsiiProperty: "version", GoGetter: "Version"},
 		},
 		func() interface{} {
 			j := jsiiProxy_NIST80053R5Checks{}
 			_jsii_.InitJsiiProxy(&j.jsiiProxy_NagPack)
 			return &j
 		},
-	)
-	_jsii_.RegisterStruct(
-		"cdk-nag.NagLoggerBaseData",
-		reflect.TypeOf((*NagLoggerBaseData)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"cdk-nag.NagLoggerComplianceData",
-		reflect.TypeOf((*NagLoggerComplianceData)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"cdk-nag.NagLoggerErrorData",
-		reflect.TypeOf((*NagLoggerErrorData)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"cdk-nag.NagLoggerNonComplianceData",
-		reflect.TypeOf((*NagLoggerNonComplianceData)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"cdk-nag.NagLoggerNotApplicableData",
-		reflect.TypeOf((*NagLoggerNotApplicableData)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"cdk-nag.NagLoggerSuppressedData",
-		reflect.TypeOf((*NagLoggerSuppressedData)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"cdk-nag.NagLoggerSuppressedErrorData",
-		reflect.TypeOf((*NagLoggerSuppressedErrorData)(nil)).Elem(),
 	)
 	_jsii_.RegisterEnum(
 		"cdk-nag.NagMessageLevel",
@@ -192,27 +130,24 @@ func init() {
 		reflect.TypeOf((*NagPack)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
-			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
+			_jsii_.MemberMethod{JsiiMethod: "checkResource", GoMethod: "CheckResource"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
+			_jsii_.MemberProperty{JsiiProperty: "ruleIds", GoGetter: "RuleIds"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateScope", GoMethod: "ValidateScope"},
+			_jsii_.MemberProperty{JsiiProperty: "version", GoGetter: "Version"},
 		},
 		func() interface{} {
 			j := jsiiProxy_NagPack{}
-			_jsii_.InitJsiiProxy(&j.Type__awscdkIAspect)
+			_jsii_.InitJsiiProxy(&j.Type__awscdkIPolicyValidationPlugin)
 			return &j
 		},
 	)
 	_jsii_.RegisterStruct(
 		"cdk-nag.NagPackProps",
 		reflect.TypeOf((*NagPackProps)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"cdk-nag.NagPackSuppression",
-		reflect.TypeOf((*NagPackSuppression)(nil)).Elem(),
 	)
 	_jsii_.RegisterEnum(
 		"cdk-nag.NagReportFormat",
@@ -225,31 +160,6 @@ func init() {
 	_jsii_.RegisterStruct(
 		"cdk-nag.NagReportLine",
 		reflect.TypeOf((*NagReportLine)(nil)).Elem(),
-	)
-	_jsii_.RegisterClass(
-		"cdk-nag.NagReportLogger",
-		reflect.TypeOf((*NagReportLogger)(nil)).Elem(),
-		[]_jsii_.Member{
-			_jsii_.MemberProperty{JsiiProperty: "formats", GoGetter: "Formats"},
-			_jsii_.MemberMethod{JsiiMethod: "getFormatStacks", GoMethod: "GetFormatStacks"},
-			_jsii_.MemberMethod{JsiiMethod: "initializeStackReport", GoMethod: "InitializeStackReport"},
-			_jsii_.MemberMethod{JsiiMethod: "onCompliance", GoMethod: "OnCompliance"},
-			_jsii_.MemberMethod{JsiiMethod: "onError", GoMethod: "OnError"},
-			_jsii_.MemberMethod{JsiiMethod: "onNonCompliance", GoMethod: "OnNonCompliance"},
-			_jsii_.MemberMethod{JsiiMethod: "onNotApplicable", GoMethod: "OnNotApplicable"},
-			_jsii_.MemberMethod{JsiiMethod: "onSuppressed", GoMethod: "OnSuppressed"},
-			_jsii_.MemberMethod{JsiiMethod: "onSuppressedError", GoMethod: "OnSuppressedError"},
-			_jsii_.MemberMethod{JsiiMethod: "writeToStackComplianceReport", GoMethod: "WriteToStackComplianceReport"},
-		},
-		func() interface{} {
-			j := jsiiProxy_NagReportLogger{}
-			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagLogger)
-			return &j
-		},
-	)
-	_jsii_.RegisterStruct(
-		"cdk-nag.NagReportLoggerProps",
-		reflect.TypeOf((*NagReportLoggerProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"cdk-nag.NagReportSchema",
@@ -268,7 +178,6 @@ func init() {
 		"cdk-nag.NagRulePostValidationStates",
 		reflect.TypeOf((*NagRulePostValidationStates)(nil)).Elem(),
 		map[string]interface{}{
-			"SUPPRESSED": NagRulePostValidationStates_SUPPRESSED,
 			"UNKNOWN": NagRulePostValidationStates_UNKNOWN,
 		},
 	)
@@ -281,25 +190,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"cdk-nag.NagSuppressions",
-		reflect.TypeOf((*NagSuppressions)(nil)).Elem(),
-		nil, // no members
-		func() interface{} {
-			return &jsiiProxy_NagSuppressions{}
-		},
-	)
-	_jsii_.RegisterClass(
 		"cdk-nag.PCIDSS321Checks",
 		reflect.TypeOf((*PCIDSS321Checks)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
-			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
+			_jsii_.MemberMethod{JsiiMethod: "checkResource", GoMethod: "CheckResource"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
+			_jsii_.MemberProperty{JsiiProperty: "ruleIds", GoGetter: "RuleIds"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateScope", GoMethod: "ValidateScope"},
+			_jsii_.MemberProperty{JsiiProperty: "version", GoGetter: "Version"},
 		},
 		func() interface{} {
 			j := jsiiProxy_PCIDSS321Checks{}
@@ -307,22 +209,19 @@ func init() {
 			return &j
 		},
 	)
-	_jsii_.RegisterStruct(
-		"cdk-nag.RegexAppliesTo",
-		reflect.TypeOf((*RegexAppliesTo)(nil)).Elem(),
-	)
 	_jsii_.RegisterClass(
 		"cdk-nag.ServerlessChecks",
 		reflect.TypeOf((*ServerlessChecks)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "applyRule", GoMethod: "ApplyRule"},
-			_jsii_.MemberMethod{JsiiMethod: "ignoreRule", GoMethod: "IgnoreRule"},
-			_jsii_.MemberProperty{JsiiProperty: "loggers", GoGetter: "Loggers"},
-			_jsii_.MemberProperty{JsiiProperty: "packGlobalSuppressionIgnore", GoGetter: "PackGlobalSuppressionIgnore"},
+			_jsii_.MemberMethod{JsiiMethod: "checkResource", GoMethod: "CheckResource"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
 			_jsii_.MemberProperty{JsiiProperty: "packName", GoGetter: "PackName"},
 			_jsii_.MemberProperty{JsiiProperty: "readPackName", GoGetter: "ReadPackName"},
-			_jsii_.MemberProperty{JsiiProperty: "userGlobalSuppressionIgnore", GoGetter: "UserGlobalSuppressionIgnore"},
-			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
+			_jsii_.MemberProperty{JsiiProperty: "ruleIds", GoGetter: "RuleIds"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateScope", GoMethod: "ValidateScope"},
+			_jsii_.MemberProperty{JsiiProperty: "version", GoGetter: "Version"},
 		},
 		func() interface{} {
 			j := jsiiProxy_ServerlessChecks{}
@@ -331,66 +230,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"cdk-nag.SuppressionIgnoreAlways",
-		reflect.TypeOf((*SuppressionIgnoreAlways)(nil)).Elem(),
+		"cdk-nag.WriteNagSuppressionsToCloudFormationAspect",
+		reflect.TypeOf((*WriteNagSuppressionsToCloudFormationAspect)(nil)).Elem(),
 		[]_jsii_.Member{
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
+			_jsii_.MemberMethod{JsiiMethod: "visit", GoMethod: "Visit"},
 		},
 		func() interface{} {
-			j := jsiiProxy_SuppressionIgnoreAlways{}
-			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagSuppressionIgnore)
-			return &j
-		},
-	)
-	_jsii_.RegisterClass(
-		"cdk-nag.SuppressionIgnoreAnd",
-		reflect.TypeOf((*SuppressionIgnoreAnd)(nil)).Elem(),
-		[]_jsii_.Member{
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
-		},
-		func() interface{} {
-			j := jsiiProxy_SuppressionIgnoreAnd{}
-			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagSuppressionIgnore)
-			return &j
-		},
-	)
-	_jsii_.RegisterClass(
-		"cdk-nag.SuppressionIgnoreErrors",
-		reflect.TypeOf((*SuppressionIgnoreErrors)(nil)).Elem(),
-		[]_jsii_.Member{
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
-		},
-		func() interface{} {
-			j := jsiiProxy_SuppressionIgnoreErrors{}
-			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagSuppressionIgnore)
-			return &j
-		},
-	)
-	_jsii_.RegisterStruct(
-		"cdk-nag.SuppressionIgnoreInput",
-		reflect.TypeOf((*SuppressionIgnoreInput)(nil)).Elem(),
-	)
-	_jsii_.RegisterClass(
-		"cdk-nag.SuppressionIgnoreNever",
-		reflect.TypeOf((*SuppressionIgnoreNever)(nil)).Elem(),
-		[]_jsii_.Member{
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
-		},
-		func() interface{} {
-			j := jsiiProxy_SuppressionIgnoreNever{}
-			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagSuppressionIgnore)
-			return &j
-		},
-	)
-	_jsii_.RegisterClass(
-		"cdk-nag.SuppressionIgnoreOr",
-		reflect.TypeOf((*SuppressionIgnoreOr)(nil)).Elem(),
-		[]_jsii_.Member{
-			_jsii_.MemberMethod{JsiiMethod: "createMessage", GoMethod: "CreateMessage"},
-		},
-		func() interface{} {
-			j := jsiiProxy_SuppressionIgnoreOr{}
-			_jsii_.InitJsiiProxy(&j.jsiiProxy_INagSuppressionIgnore)
+			j := jsiiProxy_WriteNagSuppressionsToCloudFormationAspect{}
+			_jsii_.InitJsiiProxy(&j.Type__awscdkIAspect)
 			return &j
 		},
 	)

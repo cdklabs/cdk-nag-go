@@ -7,8 +7,6 @@ type NagRulePostValidationStates string
 
 const (
 	// Experimental.
-	NagRulePostValidationStates_SUPPRESSED NagRulePostValidationStates = "SUPPRESSED"
-	// Experimental.
 	NagRulePostValidationStates_UNKNOWN NagRulePostValidationStates = "UNKNOWN"
 )
 

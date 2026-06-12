@@ -8,15 +8,15 @@ func (n *jsiiProxy_NagPack) validateApplyRuleParameters(params IApplyRule) error
 	return nil
 }
 
-func (n *jsiiProxy_NagPack) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
+func (n *jsiiProxy_NagPack) validateCheckResourceParameters(node awscdk.CfnResource) error {
 	return nil
 }
 
-func (n *jsiiProxy_NagPack) validateVisitParameters(node constructs.IConstruct) error {
+func (n *jsiiProxy_NagPack) validateValidateParameters(context awscdk.IPolicyValidationContext) error {
 	return nil
 }
 
-func (j *jsiiProxy_NagPack) validateSetLoggersParameters(val *[]INagLogger) error {
+func (n *jsiiProxy_NagPack) validateValidateScopeParameters(scope constructs.IConstruct) error {
 	return nil
 }
 

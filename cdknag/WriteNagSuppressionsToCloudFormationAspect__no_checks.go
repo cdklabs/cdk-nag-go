@@ -4,7 +4,7 @@ package cdknag
 
 // Building without runtime type checking enabled, so all the below just return nil
 
-func (i *jsiiProxy_INagSuppressionIgnore) validateCreateMessageParameters(input *SuppressionIgnoreInput) error {
+func (w *jsiiProxy_WriteNagSuppressionsToCloudFormationAspect) validateVisitParameters(node constructs.IConstruct) error {
 	return nil
 }
 

@@ -2,7 +2,7 @@ package cdknag
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/cdklabs/cdk-nag-go/cdknag/v2/jsii"
+	_init_ "github.com/cdklabs/cdk-nag-go/cdknag/v3/jsii"
 
 	"github.com/aws/aws-cdk-go/awscdk/v2"
 )

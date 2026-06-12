@@ -1,12 +1,11 @@
 package cdknag
 
 
+// A single line in a NagReport.
 // Experimental.
 type NagReportLine struct {
 	// Experimental.
 	Compliance *string `field:"required" json:"compliance" yaml:"compliance"`
-	// Experimental.
-	ExceptionReason *string `field:"required" json:"exceptionReason" yaml:"exceptionReason"`
 	// Experimental.
 	ResourceId *string `field:"required" json:"resourceId" yaml:"resourceId"`
 	// Experimental.

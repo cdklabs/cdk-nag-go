@@ -8,15 +8,15 @@ func (s *jsiiProxy_ServerlessChecks) validateApplyRuleParameters(params IApplyRu
 	return nil
 }
 
-func (s *jsiiProxy_ServerlessChecks) validateIgnoreRuleParameters(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel) error {
+func (s *jsiiProxy_ServerlessChecks) validateCheckResourceParameters(node awscdk.CfnResource) error {
 	return nil
 }
 
-func (s *jsiiProxy_ServerlessChecks) validateVisitParameters(node constructs.IConstruct) error {
+func (s *jsiiProxy_ServerlessChecks) validateValidateParameters(context awscdk.IPolicyValidationContext) error {
 	return nil
 }
 
-func (j *jsiiProxy_ServerlessChecks) validateSetLoggersParameters(val *[]INagLogger) error {
+func (s *jsiiProxy_ServerlessChecks) validateValidateScopeParameters(scope constructs.IConstruct) error {
 	return nil
 }
 

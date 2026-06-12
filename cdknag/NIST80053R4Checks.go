@@ -2,7 +2,7 @@ package cdknag
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/cdklabs/cdk-nag-go/cdknag/v2/jsii"
+	_init_ "github.com/cdklabs/cdk-nag-go/cdknag/v3/jsii"
 
 	"github.com/aws/aws-cdk-go/awscdk/v2"
 	"github.com/aws/constructs-go/constructs/v10"
@@ -14,35 +14,43 @@ import (
 // Experimental.
 type NIST80053R4Checks interface {
 	NagPack
+	// The name of the plugin that will be displayed in the validation report.
 	// Experimental.
-	Loggers() *[]INagLogger
-	// Experimental.
-	SetLoggers(val *[]INagLogger)
-	// Experimental.
-	PackGlobalSuppressionIgnore() INagSuppressionIgnore
-	// Experimental.
-	SetPackGlobalSuppressionIgnore(val INagSuppressionIgnore)
+	Name() *string
 	// Experimental.
 	PackName() *string
 	// Experimental.
 	SetPackName(val *string)
 	// Experimental.
 	ReadPackName() *string
+	// The list of rule IDs that the plugin will evaluate.
+	//
+	// Used for analytics
+	// purposes.
 	// Experimental.
-	UserGlobalSuppressionIgnore() INagSuppressionIgnore
+	RuleIds() *[]*string
+	// The version of the plugin, following the Semantic Versioning specification (see https://semver.org/). This version is used for analytics purposes, to measure the usage of different plugins and different versions. The value of this property should be kept in sync with the actual version of the software package. If the version is not provided or is not a valid semantic version, it will be reported as `0.0.0`.
 	// Experimental.
-	SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore)
+	Version() *string
 	// Create a rule to be used in the NagPack.
 	// Experimental.
 	ApplyRule(params IApplyRule)
-	// Check whether a specific rule should be ignored.
+	// Subclasses implement this to apply rules to each CfnResource.
+	// Experimental.
+	CheckResource(node awscdk.CfnResource)
+	// Entry point called by the CDK validation framework.
 	//
-	// Returns: The reason the rule was ignored, or an empty string.
+	// Requires `appConstruct` to be present on the context (CDK core change).
+	// For testing or direct invocation, use `validateScope(scope)`.
 	// Experimental.
-	IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string
-	// All aspects can visit an IConstruct.
+	Validate(context awscdk.IPolicyValidationContext) *awscdk.PolicyValidationPluginReport
+	// Validate a construct tree directly.
+	//
+	// This is the primary entry point
+	// for testing and for CDK versions that do not yet provide `appConstruct` on
+	// `IPolicyValidationContext`.
 	// Experimental.
-	Visit(node constructs.IConstruct)
+	ValidateScope(scope constructs.IConstruct) *awscdk.PolicyValidationPluginReport
 }
 
 // The jsii proxy struct for NIST80053R4Checks
@@ -50,21 +58,11 @@ type jsiiProxy_NIST80053R4Checks struct {
 	jsiiProxy_NagPack
 }
 
-func (j *jsiiProxy_NIST80053R4Checks) Loggers() *[]INagLogger {
-	var returns *[]INagLogger
+func (j *jsiiProxy_NIST80053R4Checks) Name() *string {
+	var returns *string
 	_jsii_.Get(
 		j,
-		"loggers",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_NIST80053R4Checks) PackGlobalSuppressionIgnore() INagSuppressionIgnore {
-	var returns INagSuppressionIgnore
-	_jsii_.Get(
-		j,
-		"packGlobalSuppressionIgnore",
+		"name",
 		&returns,
 	)
 	return returns
@@ -90,11 +88,21 @@ func (j *jsiiProxy_NIST80053R4Checks) ReadPackName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_NIST80053R4Checks) UserGlobalSuppressionIgnore() INagSuppressionIgnore {
-	var returns INagSuppressionIgnore
+func (j *jsiiProxy_NIST80053R4Checks) RuleIds() *[]*string {
+	var returns *[]*string
 	_jsii_.Get(
 		j,
-		"userGlobalSuppressionIgnore",
+		"ruleIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NIST80053R4Checks) Version() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"version",
 		&returns,
 	)
 	return returns
@@ -102,7 +110,7 @@ func (j *jsiiProxy_NIST80053R4Checks) UserGlobalSuppressionIgnore() INagSuppress
 
 
 // Experimental.
-func NewNIST80053R4Checks(props *NagPackProps) NIST80053R4Checks {
+func NewNIST80053R4Checks(scope constructs.IConstruct, props *NagPackProps) NIST80053R4Checks {
 	_init_.Initialize()
 
 	if err := validateNewNIST80053R4ChecksParameters(props); err != nil {
@@ -112,7 +120,7 @@ func NewNIST80053R4Checks(props *NagPackProps) NIST80053R4Checks {
 
 	_jsii_.Create(
 		"cdk-nag.NIST80053R4Checks",
-		[]interface{}{props},
+		[]interface{}{scope, props},
 		&j,
 	)
 
@@ -120,32 +128,13 @@ func NewNIST80053R4Checks(props *NagPackProps) NIST80053R4Checks {
 }
 
 // Experimental.
-func NewNIST80053R4Checks_Override(n NIST80053R4Checks, props *NagPackProps) {
+func NewNIST80053R4Checks_Override(n NIST80053R4Checks, scope constructs.IConstruct, props *NagPackProps) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"cdk-nag.NIST80053R4Checks",
-		[]interface{}{props},
+		[]interface{}{scope, props},
 		n,
-	)
-}
-
-func (j *jsiiProxy_NIST80053R4Checks)SetLoggers(val *[]INagLogger) {
-	if err := j.validateSetLoggersParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"loggers",
-		val,
-	)
-}
-
-func (j *jsiiProxy_NIST80053R4Checks)SetPackGlobalSuppressionIgnore(val INagSuppressionIgnore) {
-	_jsii_.Set(
-		j,
-		"packGlobalSuppressionIgnore",
-		val,
 	)
 }
 
@@ -156,14 +145,6 @@ func (j *jsiiProxy_NIST80053R4Checks)SetPackName(val *string) {
 	_jsii_.Set(
 		j,
 		"packName",
-		val,
-	)
-}
-
-func (j *jsiiProxy_NIST80053R4Checks)SetUserGlobalSuppressionIgnore(val INagSuppressionIgnore) {
-	_jsii_.Set(
-		j,
-		"userGlobalSuppressionIgnore",
 		val,
 	)
 }
@@ -179,30 +160,46 @@ func (n *jsiiProxy_NIST80053R4Checks) ApplyRule(params IApplyRule) {
 	)
 }
 
-func (n *jsiiProxy_NIST80053R4Checks) IgnoreRule(suppressions *[]*NagPackSuppression, ruleId *string, findingId *string, resource awscdk.CfnResource, level NagMessageLevel, ignoreSuppressionCondition INagSuppressionIgnore, validationFailure *bool) *string {
-	if err := n.validateIgnoreRuleParameters(suppressions, ruleId, findingId, resource, level); err != nil {
+func (n *jsiiProxy_NIST80053R4Checks) CheckResource(node awscdk.CfnResource) {
+	if err := n.validateCheckResourceParameters(node); err != nil {
 		panic(err)
 	}
-	var returns *string
+	_jsii_.InvokeVoid(
+		n,
+		"checkResource",
+		[]interface{}{node},
+	)
+}
+
+func (n *jsiiProxy_NIST80053R4Checks) Validate(context awscdk.IPolicyValidationContext) *awscdk.PolicyValidationPluginReport {
+	if err := n.validateValidateParameters(context); err != nil {
+		panic(err)
+	}
+	var returns *awscdk.PolicyValidationPluginReport
 
 	_jsii_.Invoke(
 		n,
-		"ignoreRule",
-		[]interface{}{suppressions, ruleId, findingId, resource, level, ignoreSuppressionCondition, validationFailure},
+		"validate",
+		[]interface{}{context},
 		&returns,
 	)
 
 	return returns
 }
 
-func (n *jsiiProxy_NIST80053R4Checks) Visit(node constructs.IConstruct) {
-	if err := n.validateVisitParameters(node); err != nil {
+func (n *jsiiProxy_NIST80053R4Checks) ValidateScope(scope constructs.IConstruct) *awscdk.PolicyValidationPluginReport {
+	if err := n.validateValidateScopeParameters(scope); err != nil {
 		panic(err)
 	}
-	_jsii_.InvokeVoid(
+	var returns *awscdk.PolicyValidationPluginReport
+
+	_jsii_.Invoke(
 		n,
-		"visit",
-		[]interface{}{node},
+		"validateScope",
+		[]interface{}{scope},
+		&returns,
 	)
+
+	return returns
 }
 

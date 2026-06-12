@@ -1,6 +1,7 @@
 package cdknag
 
 
+// Schema for the NagReport output.
 // Experimental.
 type NagReportSchema struct {
 	// Experimental.

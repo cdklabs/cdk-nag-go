@@ -17,11 +17,6 @@ type IApplyRule interface {
 	Explanation() *string
 	// Experimental.
 	SetExplanation(e *string)
-	// A condition in which a suppression should be ignored.
-	// Experimental.
-	IgnoreSuppressionCondition() INagSuppressionIgnore
-	// Experimental.
-	SetIgnoreSuppressionCondition(i INagSuppressionIgnore)
 	// Why the rule was triggered.
 	// Experimental.
 	Info() *string
@@ -82,24 +77,6 @@ func (j *jsiiProxy_IApplyRule)SetExplanation(val *string) {
 	_jsii_.Set(
 		j,
 		"explanation",
-		val,
-	)
-}
-
-func (j *jsiiProxy_IApplyRule) IgnoreSuppressionCondition() INagSuppressionIgnore {
-	var returns INagSuppressionIgnore
-	_jsii_.Get(
-		j,
-		"ignoreSuppressionCondition",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_IApplyRule)SetIgnoreSuppressionCondition(val INagSuppressionIgnore) {
-	_jsii_.Set(
-		j,
-		"ignoreSuppressionCondition",
 		val,
 	)
 }
